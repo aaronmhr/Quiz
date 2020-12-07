@@ -33,9 +33,7 @@ class FlowTest: XCTestCase {
     }
     
     func test_start_withTwoQuestions_routesToFirstQuestion() {
-        let sut = makeSUT(questions: ["Q1", "Q2"])
-
-        sut.start()
+        makeSUT(questions: ["Q1", "Q2"]).start()
         
         XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
