@@ -26,4 +26,12 @@ class ResultsViewControllerTest: XCTestCase {
 
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
+
+    func test_viewDidLoad_withOneAnswer_rendersAnswer() {
+        let sut = ResultsViewController(summary: "a summary", answers: ["A1"])
+
+        _ = sut.view
+
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+    }
 }

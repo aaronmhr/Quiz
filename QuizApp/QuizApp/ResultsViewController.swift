@@ -17,12 +17,22 @@ class ResultsViewController: UIViewController {
     convenience init(summary: String, answers: [String]) {
         self.init()
         self.summary = summary
-//        self.answers = answers
+        self.answers = answers
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         headerLabel.text = summary
+    }
+}
+
+extension ResultsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        answers.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        UITableViewCell()
     }
 }
