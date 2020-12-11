@@ -44,5 +44,4 @@ class ResultsViewControllerTest: XCTestCase {
     func makeDummyAnswer() -> PresentableAnswer {
         PresentableAnswer(isCorrect: false)
     }
-
 }
