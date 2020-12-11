@@ -8,17 +8,6 @@
 
 import UIKit
 
-class CorrectAnswerCell: UITableViewCell {
-    @IBOutlet var questionLabel: UILabel!
-    @IBOutlet var answerLabel: UILabel!
-}
-
-class WrongAnswerCell: UITableViewCell {
-    @IBOutlet var questionLabel: UILabel!
-    @IBOutlet var correctAnswerLabel: UILabel!
-    @IBOutlet var wrongAnswerLabel: UILabel!
-}
-
 class ResultsViewController: UIViewController {
     private var summary = ""
     private var answers = [PresentableAnswer]()
