@@ -7,11 +7,6 @@
 //
 
 import UIKit
-struct PresentableAnswer {
-    let question: String
-    let answer: String
-    let wrongAnswer: String?
-}
 
 class CorrectAnswerCell: UITableViewCell {
     @IBOutlet var questionLabel: UILabel!
