@@ -17,6 +17,7 @@
 		18754A1C232ED8800044F8BE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18754A1B232ED8800044F8BE /* QuestionViewController.swift */; };
 		18754A20232ED96A0044F8BE /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18754A1F232ED96A0044F8BE /* QuestionViewController.xib */; };
 		188FAAAA25842A4B00A4867D /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FAAA925842A4B00A4867D /* TableViewHelpers.swift */; };
+		188FAAAE25842E0E00A4867D /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		18754A1B232ED8800044F8BE /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		18754A1F232ED96A0044F8BE /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 		188FAAA925842A4B00A4867D /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
+		188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				18754A02232ED0110044F8BE /* LaunchScreen.storyboard */,
 				186EE9D525818DF500E15B07 /* ResultsViewController.swift */,
 				186EE9D125818DE200E15B07 /* ResultsViewController.xib */,
+				188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */,
 				18754A05232ED0110044F8BE /* Info.plist */,
 			);
 			path = QuizApp;
@@ -193,6 +196,7 @@
 				18754A04232ED0110044F8BE /* LaunchScreen.storyboard in Resources */,
 				18754A01232ED0110044F8BE /* Assets.xcassets in Resources */,
 				18754A20232ED96A0044F8BE /* QuestionViewController.xib in Resources */,
+				188FAAAE25842E0E00A4867D /* CorrectAnswerCell.xib in Resources */,
 				186EE9D225818DE200E15B07 /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
