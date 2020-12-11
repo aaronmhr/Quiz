@@ -15,6 +15,10 @@ class CorrectAnswerCell: UITableViewCell {
 
 }
 
+class WrongAnswerCell: UITableViewCell {
+
+}
+
 class ResultsViewController: UIViewController {
     private var summary = ""
     private var answers = [PresentableAnswer]()
@@ -40,6 +44,7 @@ extension ResultsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        CorrectAnswerCell()
+        let answer = answers[indexPath.row]
+        return answer.isCorrect ? CorrectAnswerCell() : WrongAnswerCell()
     }
 }
