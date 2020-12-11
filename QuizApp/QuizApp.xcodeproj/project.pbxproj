@@ -19,6 +19,7 @@
 		188FAAAA25842A4B00A4867D /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FAAA925842A4B00A4867D /* TableViewHelpers.swift */; };
 		188FAAAE25842E0E00A4867D /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */; };
 		188FAAB22584332800A4867D /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188FAAB12584332800A4867D /* WrongAnswerCell.xib */; };
+		188FAAB825843A8500A4867D /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FAAB725843A8500A4867D /* UITableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		188FAAA925842A4B00A4867D /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		188FAAB12584332800A4867D /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
+		188FAAB725843A8500A4867D /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				18754A00232ED0110044F8BE /* Assets.xcassets */,
 				18754A02232ED0110044F8BE /* LaunchScreen.storyboard */,
 				186EE9D525818DF500E15B07 /* ResultsViewController.swift */,
+				188FAAB725843A8500A4867D /* UITableViewExtension.swift */,
 				186EE9D125818DE200E15B07 /* ResultsViewController.xib */,
 				188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */,
 				188FAAB12584332800A4867D /* WrongAnswerCell.xib */,
@@ -222,6 +225,7 @@
 				18754A1C232ED8800044F8BE /* QuestionViewController.swift in Sources */,
 				187549FA232ED00F0044F8BE /* AppDelegate.swift in Sources */,
 				186EE9D625818DF500E15B07 /* ResultsViewController.swift in Sources */,
+				188FAAB825843A8500A4867D /* UITableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
