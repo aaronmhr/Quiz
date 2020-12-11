@@ -15,9 +15,6 @@ class ResultsViewControllerTest: XCTestCase {
         XCTAssertEqual(makeSUT(summary: "a summary").headerLabel.text, "a summary")
     }
 
-    func test_viewDidLoad_withoutAnswers_doesNotRenderAnswers() {
-
-    }
     func test_viewDidLoad_rendersAnswers() {
         XCTAssertEqual(makeSUT(answers: []).tableView.numberOfRows(inSection: 0), 0)
         XCTAssertEqual(makeSUT(answers: [makeDummyAnswer()]).tableView.numberOfRows(inSection: 0), 1)
