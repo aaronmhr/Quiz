@@ -16,6 +16,7 @@
 		18754A1A232ED0870044F8BE /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18754A19232ED0870044F8BE /* QuestionViewControllerTest.swift */; };
 		18754A1C232ED8800044F8BE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18754A1B232ED8800044F8BE /* QuestionViewController.swift */; };
 		18754A20232ED96A0044F8BE /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18754A1F232ED96A0044F8BE /* QuestionViewController.xib */; };
+		188FAAAA25842A4B00A4867D /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FAAA925842A4B00A4867D /* TableViewHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		18754A19232ED0870044F8BE /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		18754A1B232ED8800044F8BE /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		18754A1F232ED96A0044F8BE /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
+		188FAAA925842A4B00A4867D /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				18754A10232ED0110044F8BE /* Info.plist */,
 				18754A19232ED0870044F8BE /* QuestionViewControllerTest.swift */,
 				186EE9CB25818C4100E15B07 /* ResultsViewControllerTest.swift */,
+				188FAAA925842A4B00A4867D /* TableViewHelpers.swift */,
 			);
 			path = QuizAppTests;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186EE9CC25818C4100E15B07 /* ResultsViewControllerTest.swift in Sources */,
+				188FAAAA25842A4B00A4867D /* TableViewHelpers.swift in Sources */,
 				18754A1A232ED0870044F8BE /* QuestionViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
