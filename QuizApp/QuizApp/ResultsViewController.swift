@@ -19,7 +19,8 @@ class CorrectAnswerCell: UITableViewCell {
 }
 
 class WrongAnswerCell: UITableViewCell {
-
+    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var correctAnswerLabel: UILabel!
 }
 
 class ResultsViewController: UIViewController {
@@ -39,6 +40,7 @@ class ResultsViewController: UIViewController {
 
         headerLabel.text = summary
         tableView.register(UINib(nibName: "CorrectAnswerCell", bundle: nil), forCellReuseIdentifier: "CorrectAnswerCell")
+        tableView.register(UINib(nibName: "WrongAnswerCell", bundle: nil), forCellReuseIdentifier: "WrongAnswerCell")
     }
 }
 
@@ -52,7 +54,10 @@ extension ResultsViewController: UITableViewDataSource {
         if answer.isCorrect {
             return correctAnswerCell(for: answer)
         }
-        return  WrongAnswerCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WrongAnswerCell") as! WrongAnswerCell
+        cell.questionLabel.text = answer.question
+        cell.correctAnswerLabel.text = answer.answer
+        return cell
     }
 
     private func correctAnswerCell(for answer: PresentableAnswer) -> UITableViewCell {
