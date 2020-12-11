@@ -12,21 +12,15 @@ import XCTest
 
 class ResultsViewControllerTest: XCTestCase {
     func test_viewDidLoad_renderSummary() {
-        let sut = makeSUT(summary: "a summary", answers: [])
-
-        XCTAssertEqual(sut.headerLabel.text, "a summary")
+        XCTAssertEqual(makeSUT(summary: "a summary").headerLabel.text, "a summary")
     }
 
     func test_viewDidLoad_withoutAnswers_doesNotRenderAnswers() {
-        let sut = makeSUT(summary: "a summary", answers: [])
 
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
-
-    func test_viewDidLoad_withOneAnswer_rendersAnswer() {
-        let sut = makeSUT(summary: "a summary", answers: ["A1"])
-
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+    func test_viewDidLoad_rendersAnswers() {
+        XCTAssertEqual(makeSUT(answers: []).tableView.numberOfRows(inSection: 0), 0)
+        XCTAssertEqual(makeSUT(answers: [makeDummyAnswer()]).tableView.numberOfRows(inSection: 0), 1)
     }
 
     // MARK: - Helpers
@@ -35,4 +29,9 @@ class ResultsViewControllerTest: XCTestCase {
         sut.loadViewIfNeeded()
         return sut
     }
+
+    func makeDummyAnswer() -> String {
+        "an answer"
+    }
+
 }
