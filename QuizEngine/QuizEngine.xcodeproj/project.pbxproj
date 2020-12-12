@@ -14,7 +14,7 @@
 		1899CDCE258572FA000D9E2E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDCD258572FA000D9E2E /* Router.swift */; };
 		1899CDD425857364000D9E2E /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD325857364000D9E2E /* GameTest.swift */; };
 		1899CDD8258574C9000D9E2E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD7258574C9000D9E2E /* Game.swift */; };
-		1899CDE625857CCF000D9E2E /* RouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDE525857CCF000D9E2E /* RouterSpy.swift */; };
+		1899CDF225857D24000D9E2E /* RouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDF125857D24000D9E2E /* RouterSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,7 @@
 		1899CDCD258572FA000D9E2E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1899CDD325857364000D9E2E /* GameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
 		1899CDD7258574C9000D9E2E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		1899CDE525857CCF000D9E2E /* RouterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterSpy.swift; sourceTree = "<group>"; };
+		1899CDF125857D24000D9E2E /* RouterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,18 +95,18 @@
 			children = (
 				186506EB232E60EC0074EC5F /* FlowTest.swift */,
 				1899CDD325857364000D9E2E /* GameTest.swift */,
-				1899CDE425857CCF000D9E2E /* Helpers */,
+				1899CDEF25857D10000D9E2E /* Spies */,
 				186506E1232E60650074EC5F /* Info.plist */,
 			);
 			path = QuizEngineTests;
 			sourceTree = "<group>";
 		};
-		1899CDE425857CCF000D9E2E /* Helpers */ = {
+		1899CDEF25857D10000D9E2E /* Spies */ = {
 			isa = PBXGroup;
 			children = (
-				1899CDE525857CCF000D9E2E /* RouterSpy.swift */,
+				1899CDF125857D24000D9E2E /* RouterSpy.swift */,
 			);
-			path = Helpers;
+			path = Spies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +232,7 @@
 			files = (
 				186506EC232E60EC0074EC5F /* FlowTest.swift in Sources */,
 				1899CDD425857364000D9E2E /* GameTest.swift in Sources */,
-				1899CDE625857CCF000D9E2E /* RouterSpy.swift in Sources */,
+				1899CDF225857D24000D9E2E /* RouterSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
