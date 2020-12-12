@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-struct Result<Question: Hashable, Answer> {
-    let answers: [Question: Answer]
-    let score: Int
+public struct Result<Question: Hashable, Answer> {
+    public let answers: [Question: Answer]
+    public let score: Int
 }
