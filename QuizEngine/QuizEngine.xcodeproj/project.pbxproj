@@ -11,6 +11,7 @@
 		186506EC232E60EC0074EC5F /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186506EB232E60EC0074EC5F /* FlowTest.swift */; };
 		186506EE232E621A0074EC5F /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186506ED232E621A0074EC5F /* Flow.swift */; };
 		1899CDCA258572D9000D9E2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDC9258572D9000D9E2E /* Result.swift */; };
+		1899CDCE258572FA000D9E2E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDCD258572FA000D9E2E /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		186506EB232E60EC0074EC5F /* FlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
 		186506ED232E621A0074EC5F /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		1899CDC9258572D9000D9E2E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		1899CDCD258572FA000D9E2E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				186506D5232E60650074EC5F /* Info.plist */,
 				186506ED232E621A0074EC5F /* Flow.swift */,
 				1899CDC9258572D9000D9E2E /* Result.swift */,
+				1899CDCD258572FA000D9E2E /* Router.swift */,
 			);
 			path = QuizEngine;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1899CDCA258572D9000D9E2E /* Result.swift in Sources */,
+				1899CDCE258572FA000D9E2E /* Router.swift in Sources */,
 				186506EE232E621A0074EC5F /* Flow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
