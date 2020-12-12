@@ -24,6 +24,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
 
         headerLabel.text = summary
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(CorrectAnswerCell.self)
         tableView.register(WrongAnswerCell.self)
     }
@@ -55,5 +56,11 @@ extension ResultsViewController: UITableViewDataSource {
         cell.correctAnswerLabel.text = answer.answer
         cell.wrongAnswerLabel.text = answer.wrongAnswer
         return cell
+    }
+}
+
+extension ResultsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        answers[indexPath.row].wrongAnswer == nil ? 70 : 90
     }
 }
