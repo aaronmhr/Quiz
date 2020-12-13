@@ -42,8 +42,18 @@ class iOSViewControllerTest: XCTestCase {
         let question = Question.singleAnswer("Q1")
         let options = ["A1", "A2"]
         let sut = iOSViewControllerFactory(options: [question: options])
-        let controller = sut.questionViewController(for: question, answerCallback: { _ in }) as? QuestionViewController
+        let controller = sut.questionViewController(for: question, answerCallback: { _ in }) as! QuestionViewController
 
-        XCTAssertEqual(controller?.options, options)
+        XCTAssertEqual(controller.options, options)
+    }
+
+    func test_questionViewController_singleAnswer_createsControllerWithSingleSelection() {
+        let question = Question.singleAnswer("Q1")
+        let options = ["A1", "A2"]
+        let sut = iOSViewControllerFactory(options: [question: options])
+        let controller = sut.questionViewController(for: question, answerCallback: { _ in }) as! QuestionViewController
+        controller.loadViewIfNeeded()
+
+        XCTAssertFalse(controller.tableView.allowsMultipleSelection)
     }
 }
