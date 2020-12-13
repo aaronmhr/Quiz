@@ -26,6 +26,7 @@ class iOSViewControllerFactory {
         switch question {
         case .singleAnswer(let value):
             return QuestionViewController(question: value, options: options, selection: answerCallback)
+            
         case .multipleAnswer(let value):
             let viewController = QuestionViewController(question: value, options: options, selection: answerCallback)
             viewController.loadViewIfNeeded()
