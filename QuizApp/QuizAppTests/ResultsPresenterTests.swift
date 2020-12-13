@@ -21,10 +21,12 @@ struct ResultsPresenter {
     var presentableAnswers: [PresentableAnswer] {
         result.answers.map { question, userAnswer in
             switch question {
-            case .singleAnswer(let value):
-                return PresentableAnswer(question: value, answer: (correctAnswers[question]?.first!)!, wrongAnswer: userAnswer.first!)
-            default:
-                return PresentableAnswer(question: "", answer: "", wrongAnswer: nil)
+            case .singleAnswer(let value), .multipleAnswer(let value):
+                return PresentableAnswer(
+                    question: value,
+                    answer: correctAnswers[question]!.joined(separator: ", "),
+                    wrongAnswer: userAnswer.joined(separator: ", ")
+                )
             }
         }
     }
@@ -56,5 +58,17 @@ class ResultsPresenterTests: XCTestCase {
         XCTAssertEqual(sut.presentableAnswers.first?.question, "Q1")
         XCTAssertEqual(sut.presentableAnswers.first?.answer, "A2")
         XCTAssertEqual(sut.presentableAnswers.first?.wrongAnswer, "A1")
+    }
+
+    func test_presentableAnswers_withOneMultipleAnswer_mapsAnswer() {
+        let answers = [Question.multipleAnswer("Q1"): ["A1", "A3"]]
+        let correctAnswers = [Question.multipleAnswer("Q1"): ["A2", "A4"]]
+        let result = Result.make(answers: answers, score: 0)
+
+        let sut = ResultsPresenter(result: result, correctAnswers: correctAnswers)
+        XCTAssertEqual(sut.presentableAnswers.count, 1)
+        XCTAssertEqual(sut.presentableAnswers.first?.question, "Q1")
+        XCTAssertEqual(sut.presentableAnswers.first?.answer, "A2, A4")
+        XCTAssertEqual(sut.presentableAnswers.first?.wrongAnswer, "A1, A3")
     }
 }
