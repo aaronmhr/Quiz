@@ -18,7 +18,7 @@ struct ResultsPresenter {
     }
 
     var summary: String {
-        "You got 1/2 correct"
+        "You got \(result.score)/\(result.answers.count) correct"
     }
 }
 
