@@ -27,8 +27,7 @@ class NavigationControllerRouterTest: XCTestCase {
     }
 
     func test_routeToSecondQuestion_presentsQuestionWithRightCallback() {
-        let vc1 = UIViewController()
-        factory.stub(question: "Q1", with: vc1)
+        factory.stub(question: "Q1", with: UIViewController())
         let sut = NavigationControllerRouter(navigationController, factory: factory)
 
         var callbackWasFired = false
@@ -50,7 +49,7 @@ class NavigationControllerRouterTest: XCTestCase {
 
         func questionViewController(for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController {
             answerCallbacks[question] = answerCallback
-            return stubbedQuestions[question]!
+            return stubbedQuestions[question] ?? UIViewController()
         }
     }
 }
