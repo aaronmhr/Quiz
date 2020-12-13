@@ -17,8 +17,8 @@ enum Question<T: Hashable>: Hashable {
         switch self {
         case .singleAnswer(let value):
             return hasher.combine(value)
-        default:
-            fatalError()
+        case .multipleAnswer(let value):
+            return hasher.combine(value)
         }
     }
 }

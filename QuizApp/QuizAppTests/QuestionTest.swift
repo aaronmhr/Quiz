@@ -16,4 +16,11 @@ class QuestionTest: XCTestCase {
 
         XCTAssertEqual(sut.hashValue, type.hashValue)
     }
+
+    func test_hashValue_multipleAnswer_returnsTypeHash() {
+        let type = "a string"
+        let sut = Question.multipleAnswer(type)
+
+        XCTAssertEqual(sut.hashValue, type.hashValue)
+    }
 }
