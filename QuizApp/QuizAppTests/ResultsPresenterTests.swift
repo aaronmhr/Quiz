@@ -20,6 +20,10 @@ struct ResultsPresenter {
     var summary: String {
         "You got \(result.score)/\(result.answers.count) correct"
     }
+
+    var presentableAnswers: [PresentableAnswer] {
+        []
+    }
 }
 
 class ResultsPresenterTests: XCTestCase {
@@ -28,5 +32,13 @@ class ResultsPresenterTests: XCTestCase {
         let result = Result.make(answers: answers, score: 1)
         let sut = ResultsPresenter(result: result)
         XCTAssertEqual(sut.summary, "You got 1/2 correct")
+    }
+
+    func test_presentableAnswers_empty_shouldBeEmpty() {
+        let answers = [Question<String>: [String]]()
+        let result = Result.make(answers: answers, score: 0)
+
+        let sut = ResultsPresenter(result: result)
+        XCTAssertTrue(sut.presentableAnswers.isEmpty)
     }
 }
