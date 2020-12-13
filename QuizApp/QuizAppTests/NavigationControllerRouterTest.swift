@@ -11,15 +11,22 @@ import QuizEngine
 
 import UIKit
 
+protocol ViewControllerFactory {
+    func questionViewController(for question: String, answerCallback: (String) -> Void) -> UIViewController
+}
+
 class NavigationControllerRouter: Router {
     private let navigationController: UINavigationController
+    private let factory: ViewControllerFactory
 
-    init(_ navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController, factory: ViewControllerFactory) {
         self.navigationController = navigationController
+        self.factory = factory
     }
 
     func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
-        navigationController.pushViewController(UIViewController(), animated: false)
+        let viewController = factory.questionViewController(for: question, answerCallback: answerCallback)
+        navigationController.pushViewController(viewController, animated: false)
     }
 
     func routeTo(result: Result<String, String>) {
@@ -31,20 +38,25 @@ class NavigationControllerRouter: Router {
 class NavigationControllerRouterTest: XCTestCase {
     func test_routeToQuestion_presentsQuestionController() {
         let navigationController = UINavigationController()
-        let sut = NavigationControllerRouter(navigationController)
+        let factory = ViewControllerFactoryStub()
+        let viewController = UIViewController()
+        factory.stub(question: "Q1", with: viewController)
+        let sut = NavigationControllerRouter(navigationController, factory: factory)
 
         sut.routeTo(question: "Q1", answerCallback: { _ in })
 
-        XCTAssertEqual(navigationController.viewControllers.count, 1)
+        XCTAssertEqual(navigationController.viewControllers.first, viewController)
     }
 
-    func test_routeToQuestionTwice_presentsQuestionController() {
-        let navigationController = UINavigationController()
-        let sut = NavigationControllerRouter(navigationController)
+    class ViewControllerFactoryStub: ViewControllerFactory {
+        private var stubbedQuestions = [String: UIViewController]()
 
-        sut.routeTo(question: "Q1", answerCallback: { _ in })
-        sut.routeTo(question: "Q2", answerCallback: { _ in })
+        func stub(question: String, with viewController: UIViewController) {
+            stubbedQuestions[question] = viewController
+        }
 
-        XCTAssertEqual(navigationController.viewControllers.count, 2)
+        func questionViewController(for question: String, answerCallback: (String) -> Void) -> UIViewController {
+            stubbedQuestions[question]!
+        }
     }
 }
