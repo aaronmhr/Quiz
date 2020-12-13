@@ -12,13 +12,13 @@ import XCTest
 class NavigationControllerRouterTest: XCTestCase {
     let navigationController = UINavigationController()
     let factory = ViewControllerFactoryStub()
+    lazy var sut = NavigationControllerRouter(navigationController, factory: factory)
 
     func test_routeQuestion_showsQuestionController() {
         let vc1 = UIViewController()
         let vc2 = UIViewController()
         factory.stub(question: "Q1", with: vc1)
         factory.stub(question: "Q2", with: vc2)
-        let sut = NavigationControllerRouter(navigationController, factory: factory)
 
         sut.routeTo(question: "Q1", answerCallback: { _ in })
         sut.routeTo(question: "Q2", answerCallback: { _ in })
@@ -27,8 +27,6 @@ class NavigationControllerRouterTest: XCTestCase {
     }
 
     func test_routeToSecondQuestion_presentsQuestionWithRightCallback() {
-        let sut = NavigationControllerRouter(navigationController, factory: factory)
-
         var callbackWasFired = false
         sut.routeTo(question: "Q1", answerCallback: { _ in
             callbackWasFired = true
