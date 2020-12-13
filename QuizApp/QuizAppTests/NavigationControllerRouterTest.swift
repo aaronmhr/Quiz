@@ -10,21 +10,10 @@ import XCTest
 @testable import QuizApp
 
 class NavigationControllerRouterTest: XCTestCase {
-    func test_routeToQuestion_presentsQuestionController() {
-        let navigationController = UINavigationController()
-        let factory = ViewControllerFactoryStub()
-        let viewController = UIViewController()
-        factory.stub(question: "Q1", with: viewController)
-        let sut = NavigationControllerRouter(navigationController, factory: factory)
+    let navigationController = UINavigationController()
+    let factory = ViewControllerFactoryStub()
 
-        sut.routeTo(question: "Q1", answerCallback: { _ in })
-
-        XCTAssertEqual(navigationController.viewControllers.first, viewController)
-    }
-
-    func test_routeToSecondQuestion_presentsQuestionController() {
-        let navigationController = UINavigationController()
-        let factory = ViewControllerFactoryStub()
+    func test_routeQuestion_showsQuestionController() {
         let vc1 = UIViewController()
         let vc2 = UIViewController()
         factory.stub(question: "Q1", with: vc1)
@@ -38,8 +27,6 @@ class NavigationControllerRouterTest: XCTestCase {
     }
 
     func test_routeToSecondQuestion_presentsQuestionWithRightCallback() {
-        let navigationController = UINavigationController()
-        let factory = ViewControllerFactoryStub()
         let vc1 = UIViewController()
         factory.stub(question: "Q1", with: vc1)
         let sut = NavigationControllerRouter(navigationController, factory: factory)
