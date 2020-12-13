@@ -20,10 +20,13 @@ class iOSViewControllerFactory {
             fatalError("Couldn't find options for question: \(question)")
         }
         switch question {
-        case .singleAnswer(let questionString):
-            return QuestionViewController(question: questionString, options: options, selection: answerCallback)
-        default:
-            return UIViewController()
+        case .singleAnswer(let value):
+            return QuestionViewController(question: value, options: options, selection: answerCallback)
+        case .multipleAnswer(let value):
+            let viewController = QuestionViewController(question: value, options: options, selection: answerCallback)
+            viewController.loadViewIfNeeded()
+            viewController.tableView.allowsMultipleSelection = true
+            return viewController
         }
     }
 }
@@ -44,6 +47,21 @@ class iOSViewControllerTest: XCTestCase {
         controller.loadViewIfNeeded()
 
         XCTAssertFalse(controller.tableView.allowsMultipleSelection)
+    }
+
+    func test_questionViewController_multipleAnswer_createsControllerWithQuestion() {
+        XCTAssertEqual(makeController(question: Question.multipleAnswer("Q1")).question, "Q1")
+    }
+
+    func test_questionViewController_multipleAnswer_createsControllerWithOptions() {
+        XCTAssertEqual(makeController(question: Question.multipleAnswer("Q1")).options, options)
+    }
+
+    func test_questionViewController_multipleAnswer_createsControllerWithMultipleSelection() {
+        let controller = makeController(question: .multipleAnswer(""))
+        controller.loadViewIfNeeded()
+
+        XCTAssertTrue(controller.tableView.allowsMultipleSelection)
     }
 
     // MARK: - Helpers
