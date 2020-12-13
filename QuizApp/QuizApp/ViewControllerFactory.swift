@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ViewControllerFactory {
-    func questionViewController(for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController
+    func questionViewController(for question: Question<String>, answerCallback: @escaping (String) -> Void) -> UIViewController
 }
