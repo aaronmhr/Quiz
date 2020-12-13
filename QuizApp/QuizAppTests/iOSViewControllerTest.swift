@@ -32,15 +32,11 @@ class iOSViewControllerTest: XCTestCase {
     let options = ["A1", "A2"]
 
     func test_questionViewController_singleAnswer_createsControllerWithQuestion() {
-        let controller = makeController(question: Question.singleAnswer("Q1"))
-
-        XCTAssertEqual(controller.question, "Q1")
+        XCTAssertEqual(makeController(question: Question.singleAnswer("Q1")).question, "Q1")
     }
 
     func test_questionViewController_singleAnswer_createsControllerWithOptions() {
-        let controller = makeController(question: Question.singleAnswer("Q1"))
-
-        XCTAssertEqual(controller.options, options)
+        XCTAssertEqual(makeController(question: Question.singleAnswer("Q1")).options, options)
     }
 
     func test_questionViewController_singleAnswer_createsControllerWithSingleSelection() {
