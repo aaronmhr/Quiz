@@ -27,7 +27,6 @@ class NavigationControllerRouterTest: XCTestCase {
     }
 
     func test_routeToSecondQuestion_presentsQuestionWithRightCallback() {
-        factory.stub(question: "Q1", with: UIViewController())
         let sut = NavigationControllerRouter(navigationController, factory: factory)
 
         var callbackWasFired = false
