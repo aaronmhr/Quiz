@@ -19,6 +19,7 @@
 		188EB20D258663720092080A /* ResultFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188EB20C258663720092080A /* ResultFactory.swift */; };
 		188EB21025866B410092080A /* iOSViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188EB20F25866B410092080A /* iOSViewControllerTest.swift */; };
 		188EB2132586C6470092080A /* ResultsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188EB2122586C6470092080A /* ResultsPresenterTests.swift */; };
+		188EB2162586D4FA0092080A /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188EB2152586D4FA0092080A /* ResultsPresenter.swift */; };
 		188FAAAA25842A4B00A4867D /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FAAA925842A4B00A4867D /* TableViewHelpers.swift */; };
 		188FAAAE25842E0E00A4867D /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */; };
 		188FAAB22584332800A4867D /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188FAAB12584332800A4867D /* WrongAnswerCell.xib */; };
@@ -76,6 +77,7 @@
 		188EB20C258663720092080A /* ResultFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultFactory.swift; sourceTree = "<group>"; };
 		188EB20F25866B410092080A /* iOSViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerTest.swift; sourceTree = "<group>"; };
 		188EB2122586C6470092080A /* ResultsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTests.swift; sourceTree = "<group>"; };
+		188EB2152586D4FA0092080A /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
 		188FAAA925842A4B00A4867D /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		188FAAB12584332800A4867D /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				18754A05232ED0110044F8BE /* Info.plist */,
 				18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */,
 				18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */,
+				188EB2152586D4FA0092080A /* ResultsPresenter.swift */,
 				18C349742585B25F00FC2A9F /* Question.swift */,
 			);
 			path = QuizApp;
@@ -290,6 +293,7 @@
 				186EE9D625818DF500E15B07 /* ResultsViewController.swift in Sources */,
 				18C349752585B25F00FC2A9F /* Question.swift in Sources */,
 				188FAABE25843ACE00A4867D /* PresentableAnswer.swift in Sources */,
+				188EB2162586D4FA0092080A /* ResultsPresenter.swift in Sources */,
 				18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */,
 				188FAAC225843B0700A4867D /* CorrectAnswerCell.swift in Sources */,
 				188FAAB825843A8500A4867D /* UITableViewExtension.swift in Sources */,
