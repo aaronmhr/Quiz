@@ -28,6 +28,7 @@
 		18C349562585844600FC2A9F /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */; };
 		18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */; };
 		18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */; };
+		18C3496D2585AB5500FC2A9F /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3496C2585AB5500FC2A9F /* QuestionTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		18C3496C2585AB5500FC2A9F /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				186EE9CB25818C4100E15B07 /* ResultsViewControllerTest.swift */,
 				188FAAA925842A4B00A4867D /* TableViewHelpers.swift */,
 				18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */,
+				18C3496C2585AB5500FC2A9F /* QuestionTest.swift */,
 			);
 			path = QuizAppTests;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C3496D2585AB5500FC2A9F /* QuestionTest.swift in Sources */,
 				18C349562585844600FC2A9F /* NavigationControllerRouterTest.swift in Sources */,
 				186EE9CC25818C4100E15B07 /* ResultsViewControllerTest.swift in Sources */,
 				188FAAAA25842A4B00A4867D /* TableViewHelpers.swift in Sources */,
