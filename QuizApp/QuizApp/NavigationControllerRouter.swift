@@ -24,6 +24,7 @@ class NavigationControllerRouter: Router {
     }
 
     func routeTo(result: Result<Question<String>, String>) {
-
+        let viewController = factory.resultsViewController(for: result)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

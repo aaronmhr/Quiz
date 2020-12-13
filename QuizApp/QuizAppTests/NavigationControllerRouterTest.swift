@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import QuizEngine
 @testable import QuizApp
 
 class NavigationControllerRouterTest: XCTestCase {
@@ -36,6 +37,22 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertTrue(callbackWasFired)
     }
 
+    func test_routeToResult_showsResultController() {
+        let vc1 = UIViewController()
+        let result1 = Result.make(answers: [Question.singleAnswer("Q1"): "A1"], score: 10)
+
+        let vc2 = UIViewController()
+        let result2 = Result.make(answers: [Question.singleAnswer("Q2"): "A2"], score: 20)
+
+        factory.stub(result: result1, with: vc1)
+        factory.stub(result: result2, with: vc2)
+
+        sut.routeTo(result: result1)
+        sut.routeTo(result: result2)
+
+        XCTAssertEqual(navigationController.viewControllers, [vc1, vc2])
+    }
+
     class NonAnimatedNavigationController: UINavigationController {
         override func pushViewController(_ viewController: UIViewController, animated: Bool) {
             super.pushViewController(viewController, animated: false)
@@ -44,15 +61,24 @@ class NavigationControllerRouterTest: XCTestCase {
 
     class ViewControllerFactoryStub: ViewControllerFactory {
         private var stubbedQuestions = [Question<String>: UIViewController]()
+        private var stubbedResults = [Result<Question<String>, String>: UIViewController]()
         private(set) var answerCallbacks = [Question<String>: (String) -> Void]()
 
         func stub(question: Question<String>, with viewController: UIViewController) {
             stubbedQuestions[question] = viewController
         }
 
+        func stub(result: Result<Question<String>, String>, with viewController: UIViewController) {
+            stubbedResults[result] = viewController
+        }
+
         func questionViewController(for question: Question<String>, answerCallback: @escaping (String) -> Void) -> UIViewController {
             answerCallbacks[question] = answerCallback
             return stubbedQuestions[question] ?? UIViewController()
+        }
+
+        func resultsViewController(for result: Result<Question<String>, String>) -> UIViewController {
+            stubbedResults[result] ?? UIViewController()
         }
     }
 }

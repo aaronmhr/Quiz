@@ -16,6 +16,7 @@
 		18754A1A232ED0870044F8BE /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18754A19232ED0870044F8BE /* QuestionViewControllerTest.swift */; };
 		18754A1C232ED8800044F8BE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18754A1B232ED8800044F8BE /* QuestionViewController.swift */; };
 		18754A20232ED96A0044F8BE /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18754A1F232ED96A0044F8BE /* QuestionViewController.xib */; };
+		188EB20D258663720092080A /* ResultFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188EB20C258663720092080A /* ResultFactory.swift */; };
 		188FAAAA25842A4B00A4867D /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FAAA925842A4B00A4867D /* TableViewHelpers.swift */; };
 		188FAAAE25842E0E00A4867D /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */; };
 		188FAAB22584332800A4867D /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188FAAB12584332800A4867D /* WrongAnswerCell.xib */; };
@@ -70,6 +71,7 @@
 		18754A19232ED0870044F8BE /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		18754A1B232ED8800044F8BE /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		18754A1F232ED96A0044F8BE /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
+		188EB20C258663720092080A /* ResultFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultFactory.swift; sourceTree = "<group>"; };
 		188FAAA925842A4B00A4867D /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		188FAAAD25842E0E00A4867D /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		188FAAB12584332800A4867D /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				18754A10232ED0110044F8BE /* Info.plist */,
 				18754A19232ED0870044F8BE /* QuestionViewControllerTest.swift */,
+				188EB20C258663720092080A /* ResultFactory.swift */,
 				186EE9CB25818C4100E15B07 /* ResultsViewControllerTest.swift */,
 				188FAAA925842A4B00A4867D /* TableViewHelpers.swift */,
 				18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */,
@@ -294,6 +297,7 @@
 				18C3496D2585AB5500FC2A9F /* QuestionTest.swift in Sources */,
 				18C349562585844600FC2A9F /* NavigationControllerRouterTest.swift in Sources */,
 				186EE9CC25818C4100E15B07 /* ResultsViewControllerTest.swift in Sources */,
+				188EB20D258663720092080A /* ResultFactory.swift in Sources */,
 				188FAAAA25842A4B00A4867D /* TableViewHelpers.swift in Sources */,
 				18754A1A232ED0870044F8BE /* QuestionViewControllerTest.swift in Sources */,
 			);
