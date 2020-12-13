@@ -29,31 +29,33 @@ class iOSViewControllerFactory {
 }
 
 class iOSViewControllerTest: XCTestCase {
-    func test_questionViewController_singleAnswer_createsControllerWithQuestion() {
-        let question = Question.singleAnswer("Q1")
-        let options = ["A1", "A2"]
-        let sut = iOSViewControllerFactory(options: [question: options])
-        let controller = sut.questionViewController(for: question, answerCallback: { _ in }) as? QuestionViewController
+    let options = ["A1", "A2"]
 
-        XCTAssertEqual(controller?.question, "Q1")
+    func test_questionViewController_singleAnswer_createsControllerWithQuestion() {
+        let controller = makeController(question: Question.singleAnswer("Q1"))
+
+        XCTAssertEqual(controller.question, "Q1")
     }
 
     func test_questionViewController_singleAnswer_createsControllerWithOptions() {
-        let question = Question.singleAnswer("Q1")
-        let options = ["A1", "A2"]
-        let sut = iOSViewControllerFactory(options: [question: options])
-        let controller = sut.questionViewController(for: question, answerCallback: { _ in }) as! QuestionViewController
+        let controller = makeController(question: Question.singleAnswer("Q1"))
 
         XCTAssertEqual(controller.options, options)
     }
 
     func test_questionViewController_singleAnswer_createsControllerWithSingleSelection() {
-        let question = Question.singleAnswer("Q1")
-        let options = ["A1", "A2"]
-        let sut = iOSViewControllerFactory(options: [question: options])
-        let controller = sut.questionViewController(for: question, answerCallback: { _ in }) as! QuestionViewController
+        let controller = makeController(question: .singleAnswer(""))
         controller.loadViewIfNeeded()
 
         XCTAssertFalse(controller.tableView.allowsMultipleSelection)
+    }
+
+    // MARK: - Helpers
+    func makeSUT(options: [Question<String>: [String]]) -> iOSViewControllerFactory {
+        return iOSViewControllerFactory(options: options)
+    }
+
+    private func makeController(question: Question<String>) -> QuestionViewController {
+        return makeSUT(options: [question: options]).questionViewController(for: question, answerCallback: { _ in }) as! QuestionViewController
     }
 }
