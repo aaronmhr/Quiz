@@ -15,10 +15,10 @@ class iOSViewControllerFactory {
     init(options: [Question<String>: [String]]) {
         self.options = options
     }
-    func questionViewController(for question: Question<String>, answerCallback: @escaping (String) -> Void) -> UIViewController {
+    func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
         switch question {
         case .singleAnswer(let questionString):
-            return QuestionViewController(question: questionString, options: options[question]!, selection: { _ in })
+            return QuestionViewController(question: questionString, options: options[question]!, selection: answerCallback)
         default:
             return UIViewController()
         }
