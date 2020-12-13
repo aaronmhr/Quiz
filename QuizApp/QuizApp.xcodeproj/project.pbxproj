@@ -29,6 +29,7 @@
 		18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */; };
 		18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */; };
 		18C3496D2585AB5500FC2A9F /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3496C2585AB5500FC2A9F /* QuestionTest.swift */; };
+		18C349752585B25F00FC2A9F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349742585B25F00FC2A9F /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		18C3496C2585AB5500FC2A9F /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
+		18C349742585B25F00FC2A9F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				18754A05232ED0110044F8BE /* Info.plist */,
 				18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */,
 				18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */,
+				18C349742585B25F00FC2A9F /* Question.swift */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */,
 				188FAAC625843B2300A4867D /* WrongAnswerCell.swift in Sources */,
 				186EE9D625818DF500E15B07 /* ResultsViewController.swift in Sources */,
+				18C349752585B25F00FC2A9F /* Question.swift in Sources */,
 				188FAABE25843ACE00A4867D /* PresentableAnswer.swift in Sources */,
 				18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */,
 				188FAAC225843B0700A4867D /* CorrectAnswerCell.swift in Sources */,

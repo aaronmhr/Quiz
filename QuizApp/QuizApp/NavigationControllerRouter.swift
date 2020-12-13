@@ -9,20 +9,6 @@
 import UIKit
 import QuizEngine
 
-enum Question<T: Hashable>: Hashable {
-    case singleAnswer(T)
-    case multipleAnswer(T)
-
-    func hash(into hasher: inout Hasher) {
-        switch self {
-        case .singleAnswer(let value):
-            return hasher.combine(value)
-        case .multipleAnswer(let value):
-            return hasher.combine(value)
-        }
-    }
-}
-
 class NavigationControllerRouter: Router {
     private let navigationController: UINavigationController
     private let factory: ViewControllerFactory
