@@ -20,12 +20,15 @@ struct ResultsPresenter {
 
     var presentableAnswers: [PresentableAnswer] {
         result.answers.map { question, userAnswer in
+
+            let correctAnswer = correctAnswers[question]!
+            let wrongAnswer = correctAnswer == userAnswer ? nil : userAnswer.joined(separator: ", ")
             switch question {
             case .singleAnswer(let value), .multipleAnswer(let value):
                 return PresentableAnswer(
                     question: value,
-                    answer: correctAnswers[question]!.joined(separator: ", "),
-                    wrongAnswer: userAnswer.joined(separator: ", ")
+                    answer: correctAnswer.joined(separator: ", "),
+                    wrongAnswer: wrongAnswer
                 )
             }
         }
@@ -70,5 +73,29 @@ class ResultsPresenterTests: XCTestCase {
         XCTAssertEqual(sut.presentableAnswers.first?.question, "Q1")
         XCTAssertEqual(sut.presentableAnswers.first?.answer, "A2, A4")
         XCTAssertEqual(sut.presentableAnswers.first?.wrongAnswer, "A1, A3")
+    }
+
+    func test_presentableAnswers_withRightSingleAnswer_mapsAnswer() {
+        let answers = [Question.singleAnswer("Q1"): ["A1"]]
+        let correctAnswers = [Question.singleAnswer("Q1"): ["A1"]]
+        let result = Result.make(answers: answers, score: 0)
+
+        let sut = ResultsPresenter(result: result, correctAnswers: correctAnswers)
+        XCTAssertEqual(sut.presentableAnswers.count, 1)
+        XCTAssertEqual(sut.presentableAnswers.first?.question, "Q1")
+        XCTAssertEqual(sut.presentableAnswers.first?.answer, "A1")
+        XCTAssertNil(sut.presentableAnswers.first?.wrongAnswer)
+    }
+
+    func test_presentableAnswers_withRightMultipleAnswer_mapsAnswer() {
+        let answers = [Question.multipleAnswer("Q1"): ["A1", "A3"]]
+        let correctAnswers = [Question.multipleAnswer("Q1"): ["A1", "A3"]]
+        let result = Result.make(answers: answers, score: 0)
+
+        let sut = ResultsPresenter(result: result, correctAnswers: correctAnswers)
+        XCTAssertEqual(sut.presentableAnswers.count, 1)
+        XCTAssertEqual(sut.presentableAnswers.first?.question, "Q1")
+        XCTAssertEqual(sut.presentableAnswers.first?.answer, "A1, A3")
+        XCTAssertNil(sut.presentableAnswers.first?.wrongAnswer)
     }
 }
