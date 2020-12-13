@@ -12,7 +12,7 @@ import QuizEngine
 import UIKit
 
 protocol ViewControllerFactory {
-    func questionViewController(for question: String, answerCallback: (String) -> Void) -> UIViewController
+    func questionViewController(for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController
 }
 
 class NavigationControllerRouter: Router {
@@ -63,15 +63,33 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertEqual(navigationController.viewControllers, [vc1, vc2])
     }
 
+    func test_routeToSecondQuestion_presentsQuestionWithRightCallback() {
+        let navigationController = UINavigationController()
+        let factory = ViewControllerFactoryStub()
+        let vc1 = UIViewController()
+        factory.stub(question: "Q1", with: vc1)
+        let sut = NavigationControllerRouter(navigationController, factory: factory)
+
+        var callbackWasFired = false
+        sut.routeTo(question: "Q1", answerCallback: { _ in
+            callbackWasFired = true
+        })
+        factory.answerCallbacks["Q1"]?("anything")
+
+        XCTAssertTrue(callbackWasFired)
+    }
+
     class ViewControllerFactoryStub: ViewControllerFactory {
         private var stubbedQuestions = [String: UIViewController]()
+        private(set) var answerCallbacks = [String: (String) -> Void]()
 
         func stub(question: String, with viewController: UIViewController) {
             stubbedQuestions[question] = viewController
         }
 
-        func questionViewController(for question: String, answerCallback: (String) -> Void) -> UIViewController {
-            stubbedQuestions[question]!
+        func questionViewController(for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController {
+            answerCallbacks[question] = answerCallback
+            return stubbedQuestions[question]!
         }
     }
 }
