@@ -10,16 +10,37 @@ import XCTest
 @testable import QuizApp
 
 class iOSViewControllerFactory {
+    private let options: [Question<String>: [String]]
+
+    init(options: [Question<String>: [String]]) {
+        self.options = options
+    }
     func questionViewController(for question: Question<String>, answerCallback: @escaping (String) -> Void) -> UIViewController {
-        return QuestionViewController()
+        switch question {
+        case .singleAnswer(let questionString):
+            return QuestionViewController(question: questionString, options: options[question]!, selection: { _ in })
+        default:
+            return UIViewController()
+        }
     }
 }
 
 class iOSViewControllerTest: XCTestCase {
-    func test_questionViewController_createsController() {
-        let sut = iOSViewControllerFactory()
+    func test_questionViewController_createsControllerWithQuestion() {
+        let question = Question.singleAnswer("Q1")
+        let options = ["A1", "A2"]
+        let sut = iOSViewControllerFactory(options: [question: options])
         let controller = sut.questionViewController(for: Question.singleAnswer("Q1"), answerCallback: { _ in }) as? QuestionViewController
 
-        XCTAssertNotNil(controller)
+        XCTAssertEqual(controller?.question, "Q1")
+    }
+
+    func test_questionViewController_createsControllerWithOptions() {
+        let question = Question.singleAnswer("Q1")
+        let options = ["A1", "A2"]
+        let sut = iOSViewControllerFactory(options: [question: options])
+        let controller = sut.questionViewController(for: question, answerCallback: { _ in }) as? QuestionViewController
+
+        XCTAssertEqual(controller?.options, options)
     }
 }
