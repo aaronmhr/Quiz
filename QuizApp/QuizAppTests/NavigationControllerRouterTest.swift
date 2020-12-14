@@ -27,7 +27,7 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertEqual(navigationController.viewControllers, [vc1, vc2])
     }
 
-    func test_routeToSecondQuestion_singleAnswer_answerCallback_progressesToNextQuestion() {
+    func test_routeToQuestion_singleAnswer_answerCallback_progressesToNextQuestion() {
         var callbackWasFired = false
         sut.routeTo(question: Question.singleAnswer("Q1"), answerCallback: { _ in
             callbackWasFired = true
@@ -37,7 +37,7 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertTrue(callbackWasFired)
     }
 
-    func test_routeToSecondQuestion_multipleAnswer_answerCallback_doesNotProgressToNextQuestion() {
+    func test_routeToQuestion_multipleAnswer_answerCallback_doesNotProgressToNextQuestion() {
         var callbackWasFired = false
         sut.routeTo(question: Question.multipleAnswer("Q1"), answerCallback: { _ in
             callbackWasFired = true
@@ -47,7 +47,7 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertFalse(callbackWasFired)
     }
 
-    func test_routeToSecondQuestion_multipleAnswer_answerCallback_configuresViewControllerWithSubmitButton() {
+    func test_routeToQuestion_multipleAnswer_answerCallback_configuresViewControllerWithSubmitButton() {
         let viewController = UIViewController()
         factory.stub(question: .multipleAnswer("Q1"), with: viewController)
         
@@ -56,7 +56,7 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertNotNil(viewController.navigationItem.rightBarButtonItem)
     }
 
-    func test_routeToSecondQuestion_multipleAnswerSubmitButton_isDisabledWhenZeroAnswersSelected() {
+    func test_routeToQuestion_multipleAnswerSubmitButton_isDisabledWhenZeroAnswersSelected() {
         let viewController = UIViewController()
         factory.stub(question: .multipleAnswer("Q1"), with: viewController)
 
@@ -70,7 +70,7 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertFalse(viewController.navigationItem.rightBarButtonItem!.isEnabled)
     }
 
-    func test_routeToSecondQuestion_multipleAnswerSubmitButton_progressesToNextQuestion() {
+    func test_routeToQuestion_multipleAnswerSubmitButton_progressesToNextQuestion() {
         let viewController = UIViewController()
         factory.stub(question: .multipleAnswer("Q1"), with: viewController)
 
