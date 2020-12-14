@@ -37,6 +37,15 @@ class NavigationControllerRouterTest: XCTestCase {
         XCTAssertTrue(callbackWasFired)
     }
 
+    func test_routeToQuestion_singleAnswer_doesNotConfigureSubmittButton() {
+        let viewController = UIViewController()
+        factory.stub(question: .singleAnswer("Q1"), with: viewController)
+
+        sut.routeTo(question: Question.singleAnswer("Q1"), answerCallback: { _ in })
+
+        XCTAssertNil(viewController.navigationItem.rightBarButtonItem)
+    }
+
     func test_routeToQuestion_multipleAnswer_answerCallback_doesNotProgressToNextQuestion() {
         var callbackWasFired = false
         sut.routeTo(question: Question.multipleAnswer("Q1"), answerCallback: { _ in
