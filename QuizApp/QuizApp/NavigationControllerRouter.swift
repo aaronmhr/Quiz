@@ -23,7 +23,10 @@ class NavigationControllerRouter: Router {
         case .singleAnswer:
             show(factory.questionViewController(for: question, answerCallback: answerCallback))
         default:
-            show(factory.questionViewController(for: question, answerCallback: { _ in }))
+            let controller = factory.questionViewController(for: question, answerCallback: { _ in })
+            let button = UIBarButtonItem(title: "Submit", style: .done, target: nil, action: nil)
+            controller.navigationItem.rightBarButtonItem = button
+            show(controller)
         }
     }
 
