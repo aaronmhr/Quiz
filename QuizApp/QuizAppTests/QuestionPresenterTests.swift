@@ -9,16 +9,6 @@
 import XCTest
 @testable import QuizApp
 
-struct QuestionPresenter {
-    let questions: [Question<String>]
-    let question: Question<String>
-
-    var title: String? {
-        guard let index = questions.firstIndex(of: question) else { return "" }
-        return "Question #\(index + 1)"
-    }
-}
-
 class QuestionPresenterTests: XCTestCase {
     let question1 = Question.singleAnswer("Q1")
     let question2 = Question.multipleAnswer("Q2")
