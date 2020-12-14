@@ -19,13 +19,16 @@ class NavigationControllerRouter: Router {
     }
 
     func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
-        let viewController = factory.questionViewController(for: question, answerCallback: answerCallback)
-        show(viewController)
+        switch question {
+        case .singleAnswer:
+            show(factory.questionViewController(for: question, answerCallback: answerCallback))
+        default:
+            show(factory.questionViewController(for: question, answerCallback: { _ in }))
+        }
     }
 
     func routeTo(result: Result<Question<String>, [String]>) {
-        let viewController = factory.resultsViewController(for: result)
-        show(viewController)
+        show(factory.resultsViewController(for: result))
     }
 
     private func show(_ viewController: UIViewController) {
