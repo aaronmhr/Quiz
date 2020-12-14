@@ -13,8 +13,9 @@ struct QuestionPresenter {
     let questions: [Question<String>]
     let question: Question<String>
 
-    var title: String {
-        return "Question #\(questions.firstIndex(of: question)! + 1)"
+    var title: String? {
+        guard let index = questions.firstIndex(of: question) else { return "" }
+        return "Question #\(index + 1)"
     }
 }
 
@@ -31,5 +32,12 @@ class QuestionPresenterTests: XCTestCase {
         
         let sut = QuestionPresenter(questions: [q1, q2], question: q2)
         XCTAssertEqual(sut.title, "Question #2")
+    }
+
+    func test_title_forUnexistentQuestion_isEmpty() {
+        let q1 = Question.singleAnswer("Q1")
+
+        let sut = QuestionPresenter(questions: [], question: q1)
+        XCTAssertEqual(sut.title, "")
     }
 }
