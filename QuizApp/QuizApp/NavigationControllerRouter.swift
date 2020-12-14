@@ -23,8 +23,11 @@ class NavigationControllerRouter: Router {
         case .singleAnswer:
             show(factory.questionViewController(for: question, answerCallback: answerCallback))
         default:
-            let controller = factory.questionViewController(for: question, answerCallback: { _ in })
             let button = UIBarButtonItem(title: "Submit", style: .done, target: nil, action: nil)
+            button.isEnabled = false
+            let controller = factory.questionViewController(for: question, answerCallback: { selection in
+                button.isEnabled = selection.count > 0
+            })
             controller.navigationItem.rightBarButtonItem = button
             show(controller)
         }
