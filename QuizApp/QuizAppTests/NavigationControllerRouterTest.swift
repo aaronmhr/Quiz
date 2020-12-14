@@ -82,7 +82,8 @@ class NavigationControllerRouterTest: XCTestCase {
         factory.answerCallbacks[Question.multipleAnswer("Q1")]!(["A1"])
         let button = viewController.navigationItem.rightBarButtonItem!
 
-        button.target!.performSelector(onMainThread: button.action!, with: nil, waitUntilDone: true)
+        button.simulateTap()
+
         XCTAssertTrue(callbackWasFired)
     }
 
@@ -129,5 +130,11 @@ class NavigationControllerRouterTest: XCTestCase {
         func resultsViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
             stubbedResults[result] ?? UIViewController()
         }
+    }
+}
+
+private extension UIBarButtonItem {
+    func simulateTap() {
+        target!.performSelector(onMainThread: action!, with: nil, waitUntilDone: true)
     }
 }
