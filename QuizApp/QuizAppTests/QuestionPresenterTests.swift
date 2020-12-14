@@ -14,14 +14,22 @@ struct QuestionPresenter {
     let question: Question<String>
 
     var title: String {
-        "Question #1"
+        return "Question #\(questions.firstIndex(of: question)! + 1)"
     }
 }
 
 class QuestionPresenterTests: XCTestCase {
-    func test_title() {
-        let question1 = Question.singleAnswer("A1")
+    func test_title_forFirstQuestion_formatsTitleForIndex() {
+        let question1 = Question.singleAnswer("Q1")
         let sut = QuestionPresenter(questions: [question1], question: question1)
         XCTAssertEqual(sut.title, "Question #1")
+    }
+
+    func test_title_forSecondQuestion_formatsTitleForIndex() {
+        let q1 = Question.singleAnswer("Q1")
+        let q2 = Question.multipleAnswer("Q2")
+        
+        let sut = QuestionPresenter(questions: [q1, q2], question: q2)
+        XCTAssertEqual(sut.title, "Question #2")
     }
 }
