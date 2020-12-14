@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import QuizEngine
 
-class iOSViewControllerFactory {
+class iOSViewControllerFactory: ViewControllerFactory {
     private let questions: [Question<String>]
     private let options: [Question<String>: [String]]
 
@@ -34,15 +35,14 @@ class iOSViewControllerFactory {
         }
     }
 
-    private func questionViewController(
-        for question: Question<String>,
-        value: String,
-        allowsMultipleSelection: Bool,
-        options: [String],
-        answerCallback: @escaping ([String]) -> Void) -> QuestionViewController {
+    private func questionViewController(for question: Question<String>, value: String, allowsMultipleSelection: Bool, options: [String], answerCallback: @escaping ([String]) -> Void) -> QuestionViewController {
         let presenter = QuestionPresenter(questions: questions, question: question)
         let controller = QuestionViewController(question: value, options: options, allowsMultipleSelection: allowsMultipleSelection, selection: answerCallback)
         controller.title = presenter.title
         return controller
+    }
+
+    func resultsViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
+        ResultsViewController()
     }
 }

@@ -9,8 +9,8 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-    private var summary = ""
-    private var answers = [PresentableAnswer]()
+    private(set) var summary = ""
+    private(set) var answers = [PresentableAnswer]()
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
