@@ -9,9 +9,16 @@
 import QuizEngine
 
 struct ResultsPresenter {
-    let result: Result<Question<String>, [String]>
-    let correctAnswers: [Question<String>: [String]]
-    let questions: [Question<String>]
+    private let result: Result<Question<String>, [String]>
+    private let correctAnswers: [Question<String>: [String]]
+    private let questions: [Question<String>]
+
+    init(result: Result<Question<String>, [String]>, correctAnswers: [Question<String> : [String]], questions: [Question<String>]) {
+        self.result = result
+        self.correctAnswers = correctAnswers
+        self.questions = questions
+    }
+
 
     var summary: String {
         "You got \(result.score)/\(result.answers.count) correct"
