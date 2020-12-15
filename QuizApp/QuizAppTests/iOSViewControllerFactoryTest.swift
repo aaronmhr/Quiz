@@ -57,7 +57,7 @@ class iOSViewControllerFactoryTest: XCTestCase {
         let questions = [singleAnswerQuestion, multipleAnswerQuestion]
         let result = QuizEngine.Result.make(answers: userAnswers, score: 2)
 
-        let presenter = ResultsPresenter(result: result, correctAnswers: correctAnswers, questions: questions)
+        let presenter = ResultsPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
         let sut = makeSUT(correctAnswers: correctAnswers)
 
         let controller = sut.resultsViewController(for: result) as! ResultsViewController

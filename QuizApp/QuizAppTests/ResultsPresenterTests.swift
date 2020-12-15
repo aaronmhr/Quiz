@@ -19,7 +19,7 @@ class ResultsPresenterTests: XCTestCase {
         let orderedQuestions = [singleAnswerQuestion, multipleAnswerQuestion]
         let result = Result.make(answers: answers, score: 1)
 
-        let sut = ResultsPresenter(result: result, correctAnswers: [:], questions: orderedQuestions)
+        let sut = ResultsPresenter(result: result, questions: orderedQuestions, correctAnswers: [:])
 
         XCTAssertEqual(sut.summary, "You got 1/2 correct")
     }
@@ -28,7 +28,7 @@ class ResultsPresenterTests: XCTestCase {
         let answers = [Question<String>: [String]]()
         let result = Result.make(answers: answers, score: 0)
 
-        let sut = ResultsPresenter(result: result, correctAnswers: [:], questions: [])
+        let sut = ResultsPresenter(result: result, questions: [], correctAnswers: [:])
 
         XCTAssertTrue(sut.presentableAnswers.isEmpty)
     }
@@ -39,7 +39,7 @@ class ResultsPresenterTests: XCTestCase {
         let orderedQuestions = [singleAnswerQuestion]
         let result = Result.make(answers: answers, score: 0)
 
-        let sut = ResultsPresenter(result: result, correctAnswers: correctAnswers, questions: orderedQuestions)
+        let sut = ResultsPresenter(result: result, questions: orderedQuestions, correctAnswers: correctAnswers)
 
         XCTAssertEqual(sut.presentableAnswers.count, 1)
         XCTAssertEqual(sut.presentableAnswers.first?.question, "Q1")
@@ -53,7 +53,7 @@ class ResultsPresenterTests: XCTestCase {
         let orderedQuestions = [multipleAnswerQuestion]
         let result = Result.make(answers: answers, score: 0)
 
-        let sut = ResultsPresenter(result: result, correctAnswers: correctAnswers, questions: orderedQuestions)
+        let sut = ResultsPresenter(result: result, questions: orderedQuestions, correctAnswers: correctAnswers)
 
         XCTAssertEqual(sut.presentableAnswers.count, 1)
         XCTAssertEqual(sut.presentableAnswers.first?.question, "Q2")
@@ -81,8 +81,8 @@ class ResultsPresenterTests: XCTestCase {
 
         let sut = ResultsPresenter(
             result: result,
-            correctAnswers: correctAnswers,
-            questions: orderedQuestions
+            questions: orderedQuestions,
+            correctAnswers: correctAnswers
         )
 
         XCTAssertEqual(sut.presentableAnswers.count, 3)

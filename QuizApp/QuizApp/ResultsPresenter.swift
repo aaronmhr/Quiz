@@ -10,13 +10,13 @@ import QuizEngine
 
 struct ResultsPresenter {
     private let result: Result<Question<String>, [String]>
-    private let correctAnswers: [Question<String>: [String]]
     private let questions: [Question<String>]
+    private let correctAnswers: [Question<String>: [String]]
 
-    init(result: Result<Question<String>, [String]>, correctAnswers: [Question<String> : [String]], questions: [Question<String>]) {
+    init(result: Result<Question<String>, [String]>, questions: [Question<String>], correctAnswers: [Question<String> : [String]]) {
         self.result = result
-        self.correctAnswers = correctAnswers
         self.questions = questions
+        self.correctAnswers = correctAnswers
     }
 
 
