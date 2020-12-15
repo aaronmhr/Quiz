@@ -6,11 +6,11 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-enum Question<T: Hashable>: Hashable {
+public enum Question<T: Hashable>: Hashable {
     case singleAnswer(T)
     case multipleAnswer(T)
 
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         switch self {
         case .singleAnswer(let value):
             return hasher.combine(value)

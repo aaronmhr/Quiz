@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
+import QuizEngine
+
 struct QuestionPresenter {
     let questions: [Question<String>]
     let question: Question<String>

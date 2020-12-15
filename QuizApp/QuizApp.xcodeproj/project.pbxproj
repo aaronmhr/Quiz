@@ -35,8 +35,6 @@
 		18C349562585844600FC2A9F /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */; };
 		18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */; };
 		18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */; };
-		18C3496D2585AB5500FC2A9F /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3496C2585AB5500FC2A9F /* QuestionTest.swift */; };
-		18C349752585B25F00FC2A9F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349742585B25F00FC2A9F /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +93,6 @@
 		18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		18C3496C2585AB5500FC2A9F /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
-		18C349742585B25F00FC2A9F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +153,6 @@
 				18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */,
 				18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */,
 				188EB2152586D4FA0092080A /* ResultsPresenter.swift */,
-				18C349742585B25F00FC2A9F /* Question.swift */,
 				185AE1372588000900277613 /* QuestionPresenter.swift */,
 				185AE1312587F8DD00277613 /* iOSViewControllerFactory.swift */,
 			);
@@ -174,7 +169,6 @@
 				188EB2122586C6470092080A /* ResultsPresenterTests.swift */,
 				188FAAA925842A4B00A4867D /* TableViewHelpers.swift */,
 				18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */,
-				18C3496C2585AB5500FC2A9F /* QuestionTest.swift */,
 				188EB20F25866B410092080A /* iOSViewControllerFactoryTest.swift */,
 				185AE1342587FA0900277613 /* QuestionPresenterTests.swift */,
 			);
@@ -300,7 +294,6 @@
 				18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */,
 				188FAAC625843B2300A4867D /* WrongAnswerCell.swift in Sources */,
 				186EE9D625818DF500E15B07 /* ResultsViewController.swift in Sources */,
-				18C349752585B25F00FC2A9F /* Question.swift in Sources */,
 				188FAABE25843ACE00A4867D /* PresentableAnswer.swift in Sources */,
 				185AE1322587F8DD00277613 /* iOSViewControllerFactory.swift in Sources */,
 				188EB2162586D4FA0092080A /* ResultsPresenter.swift in Sources */,
@@ -315,7 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C3496D2585AB5500FC2A9F /* QuestionTest.swift in Sources */,
 				18C349562585844600FC2A9F /* NavigationControllerRouterTest.swift in Sources */,
 				186EE9CC25818C4100E15B07 /* ResultsViewControllerTest.swift in Sources */,
 				188EB2132586C6470092080A /* ResultsPresenterTests.swift in Sources */,
