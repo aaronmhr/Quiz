@@ -52,29 +52,13 @@ class iOSViewControllerFactoryTest: XCTestCase {
     }
 
     func test_resultsViewController_createsControllerWithSummary() {
-        let userAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
-        let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
-        let questions = [singleAnswerQuestion, multipleAnswerQuestion]
-        let result = QuizEngine.Result.make(answers: userAnswers, score: 2)
-
-        let presenter = ResultsPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
-        let sut = makeSUT(correctAnswers: correctAnswers)
-
-        let controller = sut.resultsViewController(for: result) as! ResultsViewController
+        let (controller, presenter) = makeResults()
         
         XCTAssertEqual(controller.summary, presenter.summary)
     }
 
     func test_resultsViewController_createsControllerWithAnswers() {
-        let userAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
-        let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
-        let questions = [singleAnswerQuestion, multipleAnswerQuestion]
-        let result = QuizEngine.Result.make(answers: userAnswers, score: 2)
-
-        let presenter = ResultsPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
-        let sut = makeSUT(correctAnswers: correctAnswers)
-
-        let controller = sut.resultsViewController(for: result) as! ResultsViewController
+        let (controller, presenter) = makeResults()
 
         XCTAssertEqual(controller.answers.count, presenter.presentableAnswers.count)
     }
@@ -86,5 +70,17 @@ class iOSViewControllerFactoryTest: XCTestCase {
 
     private func makeController(question: Question<String>) -> QuestionViewController {
         return makeSUT(options: [question: options]).questionViewController(for: question, answerCallback: { _ in }) as! QuestionViewController
+    }
+
+    private func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
+        let userAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
+        let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
+        let questions = [singleAnswerQuestion, multipleAnswerQuestion]
+        let result = QuizEngine.Result.make(answers: userAnswers, score: 2)
+
+        let presenter = ResultsPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
+        let sut = makeSUT(correctAnswers: correctAnswers)
+        let controller = sut.resultsViewController(for: result) as! ResultsViewController
+        return (controller, presenter)
     }
 }
