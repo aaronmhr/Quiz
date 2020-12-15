@@ -1,5 +1,5 @@
 //
-//  ResultFactory.swift
+//  ResultHelper.swift
 //  QuizAppTests
 //
 //  Created by Aaron Huánuco on 13/12/20.
