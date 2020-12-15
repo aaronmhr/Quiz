@@ -25,6 +25,9 @@ struct ResultsPresenter {
         self.correctAnswers = correctAnswers
     }
 
+    var title: String {
+        "Result"
+    }
 
     var summary: String {
         "You got \(result.score)/\(result.answers.count) correct"
