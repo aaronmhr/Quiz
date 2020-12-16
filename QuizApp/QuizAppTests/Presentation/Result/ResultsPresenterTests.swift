@@ -18,9 +18,7 @@ class ResultsPresenterTests: XCTestCase {
     let multipleAnswerQuestion = Question.multipleAnswer("Q2")
 
     func test_title_returnsFormattedTitle() {
-        let result: Result<Question, Answers> = Result.make(answers: [:], score: 1)
-
-        let sut = ResultsPresenter(result: result, questions: [], options: [:], correctAnswers: [:])
+        let sut = ResultsPresenter(result: .make(), questions: [], options: [:], correctAnswers: [:])
 
         XCTAssertEqual(sut.title, "Result")
     }
@@ -37,10 +35,7 @@ class ResultsPresenterTests: XCTestCase {
     }
 
     func test_presentableAnswers_withoutQuestions_isEmpty() {
-        let answers = [Question: Answers]()
-        let result = Result.make(answers: answers, score: 0)
-
-        let sut = ResultsPresenter(result: result, questions: [], options: [:], correctAnswers: [:])
+        let sut = ResultsPresenter(result: .make(), questions: [], options: [:], correctAnswers: [:])
 
         XCTAssertTrue(sut.presentableAnswers.isEmpty)
     }

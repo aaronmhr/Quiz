@@ -9,7 +9,7 @@
 @testable import QuizEngine
 
 extension Result: Hashable {
-    static func make(answers: [Question: Answer], score: Int) -> Result<Question, Answer> {
+    static func make(answers: [Question: Answer] = [:], score: Int = 0) -> Result<Question, Answer> {
         Result(answers: answers, score: score)
     }
 
