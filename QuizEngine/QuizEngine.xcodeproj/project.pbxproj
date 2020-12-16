@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,7 @@
 		1899CDD425857364000D9E2E /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD325857364000D9E2E /* GameTest.swift */; };
 		1899CDD8258574C9000D9E2E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD7258574C9000D9E2E /* Game.swift */; };
 		1899CDF225857D24000D9E2E /* RouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDF125857D24000D9E2E /* RouterSpy.swift */; };
-		18C348F92585800C00FC2A9F /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C348F02585800C00FC2A9F /* QuizEngine.framework */; };
+		18C348F92585800C00FC2A9F /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C348F02585800C00FC2A9F /* QuizEngine.framework */; platformFilter = ios; };
 		18C349132585818900FC2A9F /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD325857364000D9E2E /* GameTest.swift */; };
 		18C349142585818900FC2A9F /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186506EB232E60EC0074EC5F /* FlowTest.swift */; };
 		18C349192585819000FC2A9F /* RouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDF125857D24000D9E2E /* RouterSpy.swift */; };
@@ -378,6 +378,7 @@
 		};
 		18C348FB2585800C00FC2A9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 18C348EF2585800C00FC2A9F /* QuizEngine_iOS */;
 			targetProxy = 18C348FA2585800C00FC2A9F /* PBXContainerItemProxy */;
 		};
