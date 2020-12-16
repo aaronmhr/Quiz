@@ -9,7 +9,10 @@
 import Foundation
 
 @available(*, deprecated)
-class Flow<Question, Answer, R: Router> where R.Question == Question, R.Answer == Answer {
+class Flow<R: Router> {
+    typealias Question = R.Question
+    typealias Answer = R.Answer
+
     private let router: R
     private let questions: [Question]
     private let scoring: ([Question: Answer]) -> Int
