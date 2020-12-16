@@ -20,20 +20,6 @@
                ReferencedContainer = "container:QuizApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18C348F72585800C00FC2A9F"
-               BuildableName = "QuizEngine_iOSTests.xctest"
-               BlueprintName = "QuizEngine_iOSTests"
-               ReferencedContainer = "container:../QuizEngine/QuizEngine.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -41,7 +27,8 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -51,15 +38,42 @@
             ReferencedContainer = "container:QuizApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "187549F5232ED00F0044F8BE"
+            BuildableName = "QuizApp.app"
+            BlueprintName = "QuizApp"
+            ReferencedContainer = "container:QuizApp.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "18C348EF2585800C00FC2A9F"
+            BuildableName = "QuizEngine.framework"
+            BlueprintName = "QuizEngine_iOS"
+            ReferencedContainer = "container:../QuizEngine/QuizEngine.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18754A09232ED0110044F8BE"
                BuildableName = "QuizAppTests.xctest"
                BlueprintName = "QuizAppTests"
                ReferencedContainer = "container:QuizApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18C348F72585800C00FC2A9F"
+               BuildableName = "QuizEngine_iOSTests.xctest"
+               BlueprintName = "QuizEngine_iOSTests"
+               ReferencedContainer = "container:../QuizEngine/QuizEngine.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
