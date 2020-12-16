@@ -12,7 +12,7 @@ import QuizEngine
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var game: Game<Question<String>, Set<String>, NavigationControllerRouter>?
+    var game: Game<Question<String>, [String], NavigationControllerRouter>?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             question2: [option4, option5, option6],
         ]
 
-        let correctAnswers = [question1: Set([option3]), question2: [option4, option6]]
+        let correctAnswers = [question1: [option3], question2: [option4, option6]]
 
         let navigationController = UINavigationController()
         let factory = iOSViewControllerFactory(questions: questions, options: options, correctAnswers: correctAnswers)
