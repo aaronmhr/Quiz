@@ -107,10 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				186506ED232E621A0074EC5F /* Flow.swift */,
-				1899CDD7258574C9000D9E2E /* Game.swift */,
-				185AE1402588390600277613 /* Question.swift */,
 				1899CDC9258572D9000D9E2E /* Result.swift */,
+				1899CDD7258574C9000D9E2E /* Game.swift */,
 				1899CDCD258572FA000D9E2E /* Router.swift */,
+				185AE1402588390600277613 /* Question.swift */,
 				186506D5232E60650074EC5F /* Info.plist */,
 			);
 			path = QuizEngine;
