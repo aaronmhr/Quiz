@@ -12,8 +12,6 @@ import XCTest
 
 class FlowTest: XCTestCase {
     
-    private let delegate = RouterSpy()
-    
     func test_start_withNoQuestions_doesNotRouteToQuestion() {
         makeSUT(questions: []).start()
         
@@ -122,10 +120,22 @@ class FlowTest: XCTestCase {
     }
     
     // MARK: Helpers
+
+    private let delegate = RouterSpy()
+
+    private weak var weakSUT: Flow<String, String, RouterSpy>?
+
+    override func tearDown() {
+        super.tearDown()
+
+        XCTAssertNil(weakSUT, "Memory leak detected. Weak reference to the SUT instance is not nil.")
+    }
     
     private func makeSUT(questions: [String],
                  scoring: @escaping ([String: String]) -> Int = { _ in 0 }) -> Flow<String, String, RouterSpy> {
-        return Flow(questions: questions, router: delegate, scoring: scoring)
+        let sut = Flow(questions: questions, router: delegate, scoring: scoring)
+        weakSUT = sut
+        return sut
     }
 
     private class RouterSpy: Router {
