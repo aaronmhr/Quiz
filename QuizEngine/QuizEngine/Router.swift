@@ -6,6 +6,14 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
+public protocol QuizDelegate {
+    associatedtype Question: Hashable
+    associatedtype Answer
+
+    func handle(question: Question, answerCallback: @escaping (Answer) -> Void)
+    func handle(result: Result<Question, Answer>)
+}
+
 @available(*, deprecated)
 public protocol Router {
     associatedtype Question: Hashable
