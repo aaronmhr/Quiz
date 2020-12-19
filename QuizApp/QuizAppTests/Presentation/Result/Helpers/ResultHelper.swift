@@ -10,13 +10,13 @@
 
 extension Result {
     static func make(answers: [Question: Answer] = [:], score: Int = 0) -> Result<Question, Answer> {
-        Result(answers: answers, score: score)
+        return Result(answers: answers, score: score)
     }
 }
 
 extension Result: Equatable where Answer: Equatable {
-    public static func == (lhs: Result<Question, Answer>, rhs: Result<Question, Answer>) -> Bool {
-        lhs.score == rhs.score && lhs.answers == rhs.answers
+    public static func ==(lhs: Result<Question, Answer>, rhs: Result<Question, Answer>) -> Bool {
+        return lhs.score == rhs.score && lhs.answers == rhs.answers
     }
 }
 
