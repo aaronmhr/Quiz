@@ -13,7 +13,6 @@
 		186506EC232E60EC0074EC5F /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186506EB232E60EC0074EC5F /* FlowTest.swift */; };
 		186506EE232E621A0074EC5F /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186506ED232E621A0074EC5F /* Flow.swift */; };
 		1899CDCA258572D9000D9E2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDC9258572D9000D9E2E /* Result.swift */; };
-		1899CDCE258572FA000D9E2E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDCD258572FA000D9E2E /* Router.swift */; };
 		1899CDD425857364000D9E2E /* DeprecatedGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD325857364000D9E2E /* DeprecatedGameTest.swift */; };
 		1899CDD8258574C9000D9E2E /* DeprecatedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD7258574C9000D9E2E /* DeprecatedGame.swift */; };
 		18B0336D258D7A6000F5FC92 /* QuizDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0336C258D7A6000F5FC92 /* QuizDelegate.swift */; };
@@ -21,7 +20,6 @@
 		18C349142585818900FC2A9F /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186506EB232E60EC0074EC5F /* FlowTest.swift */; };
 		18C3491E258581B100FC2A9F /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186506ED232E621A0074EC5F /* Flow.swift */; };
 		18C3491F258581B100FC2A9F /* DeprecatedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD7258574C9000D9E2E /* DeprecatedGame.swift */; };
-		18C34920258581B100FC2A9F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDCD258572FA000D9E2E /* Router.swift */; };
 		18C34921258581B100FC2A9F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDC9258572D9000D9E2E /* Result.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +42,6 @@
 		186506EB232E60EC0074EC5F /* FlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
 		186506ED232E621A0074EC5F /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		1899CDC9258572D9000D9E2E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		1899CDCD258572FA000D9E2E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1899CDD325857364000D9E2E /* DeprecatedGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeprecatedGameTest.swift; sourceTree = "<group>"; };
 		1899CDD7258574C9000D9E2E /* DeprecatedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeprecatedGame.swift; sourceTree = "<group>"; };
 		18B0336C258D7A6000F5FC92 /* QuizDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +108,6 @@
 				186506ED232E621A0074EC5F /* Flow.swift */,
 				1899CDC9258572D9000D9E2E /* Result.swift */,
 				1899CDD7258574C9000D9E2E /* DeprecatedGame.swift */,
-				1899CDCD258572FA000D9E2E /* Router.swift */,
 				18B0336C258D7A6000F5FC92 /* QuizDelegate.swift */,
 				185AE1402588390600277613 /* Question.swift */,
 				186506D5232E60650074EC5F /* Info.plist */,
@@ -305,7 +301,6 @@
 			files = (
 				185AE1412588390600277613 /* Question.swift in Sources */,
 				1899CDCA258572D9000D9E2E /* Result.swift in Sources */,
-				1899CDCE258572FA000D9E2E /* Router.swift in Sources */,
 				186506EE232E621A0074EC5F /* Flow.swift in Sources */,
 				1899CDD8258574C9000D9E2E /* DeprecatedGame.swift in Sources */,
 				18B0336D258D7A6000F5FC92 /* QuizDelegate.swift in Sources */,
@@ -327,7 +322,6 @@
 			files = (
 				185AE153258839AE00277613 /* Question.swift in Sources */,
 				18C3491E258581B100FC2A9F /* Flow.swift in Sources */,
-				18C34920258581B100FC2A9F /* Router.swift in Sources */,
 				18C34921258581B100FC2A9F /* Result.swift in Sources */,
 				18C3491F258581B100FC2A9F /* DeprecatedGame.swift in Sources */,
 			);
