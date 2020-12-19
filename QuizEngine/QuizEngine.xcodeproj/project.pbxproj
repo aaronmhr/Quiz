@@ -21,6 +21,7 @@
 		18F3C0AB258E7711003CD670 /* DeprecatedGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD325857364000D9E2E /* DeprecatedGameTest.swift */; };
 		18F3C0B0258E7712003CD670 /* DeprecatedGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899CDD325857364000D9E2E /* DeprecatedGameTest.swift */; };
 		18F3C0C7258E9095003CD670 /* QuizDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3C0C6258E9095003CD670 /* QuizDelegate.swift */; };
+		18F3C0D5258E9187003CD670 /* QuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3C0D4258E9187003CD670 /* QuizTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		18C348F02585800C00FC2A9F /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C348F82585800C00FC2A9F /* QuizEngine_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngine_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F3C0C6258E9095003CD670 /* QuizDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDelegate.swift; sourceTree = "<group>"; };
+		18F3C0D4258E9187003CD670 /* QuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				186506EB232E60EC0074EC5F /* FlowTest.swift */,
+				18F3C0D4258E9187003CD670 /* QuizTests.swift */,
 				1899CDD325857364000D9E2E /* DeprecatedGameTest.swift */,
 				186506E1232E60650074EC5F /* Info.plist */,
 			);
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F3C0D5258E9187003CD670 /* QuizTests.swift in Sources */,
 				18F3C0AB258E7711003CD670 /* DeprecatedGameTest.swift in Sources */,
 				186506EC232E60EC0074EC5F /* FlowTest.swift in Sources */,
 			);
