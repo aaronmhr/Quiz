@@ -6,10 +6,6 @@
 //  Copyright © 2019 Aaron Huánuco. All rights reserved.
 //
 
-import Foundation
-
-import Foundation
-
 class Flow <Delegate: QuizDelegate> {
     typealias Question = Delegate.Question
     typealias Answer = Delegate.Answer
