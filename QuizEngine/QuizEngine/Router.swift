@@ -6,6 +6,7 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
+@available(*, deprecated)
 public protocol Router {
     associatedtype Question: Hashable
     associatedtype Answer
