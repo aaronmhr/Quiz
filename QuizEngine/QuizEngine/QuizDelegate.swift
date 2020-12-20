@@ -7,7 +7,7 @@
 //
 
 public protocol QuizDelegate {
-    associatedtype Question: Hashable
+    associatedtype Question
     associatedtype Answer
 
     func answer(for question: Question, completion: @escaping (Answer) -> Void)
