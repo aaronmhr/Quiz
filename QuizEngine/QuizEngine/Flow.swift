@@ -6,7 +6,7 @@
 //  Copyright © 2019 Aaron Huánuco. All rights reserved.
 //
 
-class Flow <Delegate: QuizDelegate> {
+final class Flow <Delegate: QuizDelegate> {
     typealias Question = Delegate.Question
     typealias Answer = Delegate.Answer
 
