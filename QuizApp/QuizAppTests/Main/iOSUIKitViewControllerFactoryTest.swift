@@ -75,10 +75,13 @@ class iOSUIKitViewControllerFactoryTest: XCTestCase {
         return iOSUIKitViewControllerFactory(options: options, correctAnswers: correctAnswers)
     }
 
-    func makeQuestionController(question: Question<String> = Question.singleAnswer("")) -> QuestionViewController {
+    func makeQuestionController(
+        question: Question<String> = Question.singleAnswer(""),
+        answerCallback: @escaping ([String]) ->Void = { _ in }
+    ) -> QuestionViewController {
         let sut = makeSUT(options: [question: options],
                           correctAnswers: [(singleAnswerQuestion, []), (multipleAnswerQuestion, [])])
-        return sut.questionViewController(for: question, answerCallback: {_ in }) as! QuestionViewController
+        return sut.questionViewController(for: question, answerCallback: answerCallback) as! QuestionViewController
     }
 
     func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
