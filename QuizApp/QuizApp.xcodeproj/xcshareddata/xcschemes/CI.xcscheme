@@ -48,9 +48,9 @@
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18C348EF2585800C00FC2A9F"
+            BlueprintIdentifier = "186506D0232E60650074EC5F"
             BuildableName = "QuizEngine.framework"
-            BlueprintName = "QuizEngine_iOS"
+            BlueprintName = "QuizEngine"
             ReferencedContainer = "container:../QuizEngine/QuizEngine.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -70,9 +70,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18C348F72585800C00FC2A9F"
-               BuildableName = "QuizEngine_iOSTests.xctest"
-               BlueprintName = "QuizEngine_iOSTests"
+               BlueprintIdentifier = "186506D9232E60650074EC5F"
+               BuildableName = "QuizEngineTests.xctest"
+               BlueprintName = "QuizEngineTests"
                ReferencedContainer = "container:../QuizEngine/QuizEngine.xcodeproj">
             </BuildableReference>
          </TestableReference>
