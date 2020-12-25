@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let correctAnswers = [(question1, [option3]), (question2, [option4, option6])]
 
         let navigationController = UINavigationController()
-        let factory = iOSViewControllerFactory(
+        let factory = iOSUIKitViewControllerFactory(
             options: options,
             correctAnswers: correctAnswers
         )
