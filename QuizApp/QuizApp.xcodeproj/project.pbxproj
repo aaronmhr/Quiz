@@ -243,9 +243,7 @@
 		18531A572589628A001034E1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				18531A5825896292001034E1 /* Helpers */,
-				18531A5A258962A2001034E1 /* Question */,
-				18531A592589629C001034E1 /* Result */,
+				189D078925965EA5000CD65C /* UIKit */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -385,6 +383,16 @@
 				189D07782596402E000CD65C /* QuestionHeader.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		189D078925965EA5000CD65C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				18531A5825896292001034E1 /* Helpers */,
+				18531A5A258962A2001034E1 /* Question */,
+				18531A592589629C001034E1 /* Result */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		18C3494F258583A100FC2A9F /* Frameworks */ = {
