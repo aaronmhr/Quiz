@@ -1,27 +1,28 @@
 //
-//  iOSUIKitViewControllerFactory.swift
+//  iOSSwiftUIViewControllerFactory.swift
 //  QuizApp
 //
-//  Created by Aaron Huánuco on 14/12/20.
+//  Created by Aaron Huánuco on 25/12/20.
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
 import UIKit
+import SwiftUI
 import QuizEngine
 
-final class iOSUIKitViewControllerFactory: ViewControllerFactory {
+final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
     typealias Answers = [(question: Question<String>, answer: [String])]
 
     private let options: [Question<String>: [String]]
     private let correctAnswers: Answers
 
-    private var questions: [Question<String>] {
-        return correctAnswers.map { $0.question }
-    }
-
     init(options: [Question<String>: [String]], correctAnswers: Answers) {
         self.options = options
         self.correctAnswers = correctAnswers
+    }
+
+    var questions: [Question<String>] {
+        correctAnswers.map(\.question)
     }
 
     func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
@@ -36,7 +37,13 @@ final class iOSUIKitViewControllerFactory: ViewControllerFactory {
 
         switch question {
         case .singleAnswer(let value):
-            return questionViewController(for: question, value: value, options: options, allowsMultipleSelection: false, answerCallback: answerCallback)
+            let presenter = QuestionPresenter(questions: questions, question: question)
+            return UIHostingController(
+                rootView: SingleAnswerQuestion(
+                    title: presenter.title,
+                    question: value,
+                    options: options,
+                    selection: { answerCallback([$0]) }))
 
         case .multipleAnswer(let value):
             return questionViewController(for: question, value: value, options: options, allowsMultipleSelection: true, answerCallback: answerCallback)
@@ -54,8 +61,7 @@ final class iOSUIKitViewControllerFactory: ViewControllerFactory {
         let presenter = ResultsPresenter(
             userAnswers: userAnswers,
             correctAnswers: correctAnswers,
-            scorer: BasicScore.score
-        )
+            scorer: BasicScore.score)
         let controller = ResultsViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
         controller.title = presenter.title
         return controller
