@@ -37,6 +37,7 @@
 		189D0781259644E9000CD65C /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D0780259644E9000CD65C /* iOSSwiftUIViewControllerFactoryTest.swift */; };
 		189D078425964537000CD65C /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D078325964537000CD65C /* iOSSwiftUIViewControllerFactory.swift */; };
 		189D078D25965EFB000CD65C /* MultipleSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D078C25965EFB000CD65C /* MultipleSelectionStoreTests.swift */; };
+		189D0791259667C5000CD65C /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D0790259667C5000CD65C /* MultipleSelectionStore.swift */; };
 		18C34951258583A100FC2A9F /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C34950258583A100FC2A9F /* QuizEngine.framework */; };
 		18C34952258583A100FC2A9F /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18C34950258583A100FC2A9F /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18C349562585844600FC2A9F /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */; };
@@ -104,6 +105,7 @@
 		189D0780259644E9000CD65C /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		189D078325964537000CD65C /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
 		189D078C25965EFB000CD65C /* MultipleSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStoreTests.swift; sourceTree = "<group>"; };
+		189D0790259667C5000CD65C /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
 		18C34950258583A100FC2A9F /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				189D077525963AB1000CD65C /* SingleAnswerQuestion.swift */,
 				189D077B2596413F000CD65C /* SingleTextSelectionCell.swift */,
 				189D07782596402E000CD65C /* QuestionHeader.swift */,
+				189D0790259667C5000CD65C /* MultipleSelectionStore.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 			files = (
 				18754A1C232ED8800044F8BE /* QuestionViewController.swift in Sources */,
 				187549FA232ED00F0044F8BE /* AppDelegate.swift in Sources */,
+				189D0791259667C5000CD65C /* MultipleSelectionStore.swift in Sources */,
 				18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */,
 				189591E7258FDF560072B9C2 /* BasicScore.swift in Sources */,
 				188FAAC625843B2300A4867D /* WrongAnswerCell.swift in Sources */,
