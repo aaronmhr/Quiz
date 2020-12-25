@@ -38,11 +38,13 @@
 		189D078425964537000CD65C /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D078325964537000CD65C /* iOSSwiftUIViewControllerFactory.swift */; };
 		189D078D25965EFB000CD65C /* MultipleSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D078C25965EFB000CD65C /* MultipleSelectionStoreTests.swift */; };
 		189D0791259667C5000CD65C /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D0790259667C5000CD65C /* MultipleSelectionStore.swift */; };
+		189D079425966849000CD65C /* MultipleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D079325966849000CD65C /* MultipleAnswerQuestion.swift */; };
 		18C34951258583A100FC2A9F /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C34950258583A100FC2A9F /* QuizEngine.framework */; };
 		18C34952258583A100FC2A9F /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18C34950258583A100FC2A9F /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18C349562585844600FC2A9F /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */; };
 		18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */; };
 		18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */; };
+		18FB5FFF2596694E00549025 /* MultipleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB5FFE2596694E00549025 /* MultipleTextSelectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,10 +108,12 @@
 		189D078325964537000CD65C /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
 		189D078C25965EFB000CD65C /* MultipleSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStoreTests.swift; sourceTree = "<group>"; };
 		189D0790259667C5000CD65C /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
+		189D079325966849000CD65C /* MultipleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestion.swift; sourceTree = "<group>"; };
 		18C34950258583A100FC2A9F /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		18FB5FFE2596694E00549025 /* MultipleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTextSelectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +391,8 @@
 				189D077B2596413F000CD65C /* SingleTextSelectionCell.swift */,
 				189D07782596402E000CD65C /* QuestionHeader.swift */,
 				189D0790259667C5000CD65C /* MultipleSelectionStore.swift */,
+				189D079325966849000CD65C /* MultipleAnswerQuestion.swift */,
+				18FB5FFE2596694E00549025 /* MultipleTextSelectionCell.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -524,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18754A1C232ED8800044F8BE /* QuestionViewController.swift in Sources */,
+				189D079425966849000CD65C /* MultipleAnswerQuestion.swift in Sources */,
 				187549FA232ED00F0044F8BE /* AppDelegate.swift in Sources */,
 				189D0791259667C5000CD65C /* MultipleSelectionStore.swift in Sources */,
 				18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */,
@@ -539,6 +546,7 @@
 				185AE1382588000900277613 /* QuestionPresenter.swift in Sources */,
 				18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */,
 				188FAAC225843B0700A4867D /* CorrectAnswerCell.swift in Sources */,
+				18FB5FFF2596694E00549025 /* MultipleTextSelectionCell.swift in Sources */,
 				188FAAB825843A8500A4867D /* UITableViewExtension.swift in Sources */,
 				189D07792596402E000CD65C /* QuestionHeader.swift in Sources */,
 			);
