@@ -20,20 +20,7 @@ struct SingleAnswerQuestion: View {
             QuestionHeader(title: title, question: question)
 
             ForEach(options, id: \.self) { option in
-                Button(action: {}, label: {
-                    HStack {
-                        Circle()
-                            .stroke(Color.secondary, lineWidth: 2.5)
-                            .frame(width: 40, height: 40)
-
-                        Text(option)
-                            .font(.title)
-                            .foregroundColor(.secondary)
-
-                        Spacer()
-                    }.padding()
-
-                })
+                SingleTextSelectionCell(text: option, selection: {})
             }
 
             Spacer()
