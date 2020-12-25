@@ -131,10 +131,8 @@
 		18531A4C25895FDA001034E1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				18531A5025896089001034E1 /* Helpers */,
 				18531A51258960B2001034E1 /* Launch */,
-				18531A4D2589603B001034E1 /* Question */,
-				18531A4E25896065001034E1 /* Result */,
+				189D077325963A1D000CD65C /* UIKit */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -354,6 +352,16 @@
 				189591E6258FDF560072B9C2 /* BasicScore.swift */,
 			);
 			path = BasicScore;
+			sourceTree = "<group>";
+		};
+		189D077325963A1D000CD65C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				18531A5025896089001034E1 /* Helpers */,
+				18531A4D2589603B001034E1 /* Question */,
+				18531A4E25896065001034E1 /* Result */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		18C3494F258583A100FC2A9F /* Frameworks */ = {
