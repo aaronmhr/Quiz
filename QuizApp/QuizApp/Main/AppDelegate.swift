@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let correctAnswers = [(question1, [option3]), (question2, [option4, option6])]
 
         let adapter = iOSSwiftUINavigationAdapter(
-            navigation: navigationController,
+            navigation: QuizNavigationStore(),
             options: options,
             correctAnswers: correctAnswers,
             playAgain: startNewQuiz
