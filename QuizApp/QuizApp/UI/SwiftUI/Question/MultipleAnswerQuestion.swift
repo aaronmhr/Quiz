@@ -18,10 +18,8 @@ struct MultipleAnswerQuestion: View {
 
             HeaderView(title: title, subtitle: question)
 
-            ForEach(store.options.indices) { i in            RoundedButton(title: "Some button", isEnabled: false, action: { })
-                .previewLayout(.sizeThatFits)
-            RoundedButton(title: "Some button", isEnabled: true, action: { })
-                .previewLayout(.sizeThatFits)(option: $store.options[i])
+            ForEach(store.options.indices) { i in
+                MultipleTextSelectionCell(option: $store.options[i])
             }
 
             Spacer()
