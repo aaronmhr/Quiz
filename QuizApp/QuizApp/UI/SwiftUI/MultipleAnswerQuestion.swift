@@ -8,6 +8,33 @@
 
 import SwiftUI
 
+struct RoundedButton: View {
+    let title: String
+    let isEnabled: Bool
+    let action: () -> Void
+
+    init(title: String, isEnabled: Bool = true, action: @escaping () -> Void) {
+        self.title = title
+        self.isEnabled = isEnabled
+        self.action = action
+    }
+
+    var body: some View {
+        Button(action: action, label: {
+            HStack {
+                Spacer()
+                Text(title)
+                    .foregroundColor(Color.white)
+                    .padding()
+                Spacer()
+            }.background(Color.blue)
+            .cornerRadius(25)
+        })
+        .buttonStyle(PlainButtonStyle())
+        .disabled(!isEnabled)
+    }
+}
+
 struct MultipleAnswerQuestion: View {
     let title: String
     let question: String
@@ -24,19 +51,8 @@ struct MultipleAnswerQuestion: View {
 
             Spacer()
 
-            Button(action: store.submit, label: {
-                HStack {
-                    Spacer()
-                    Text("Submit")
-                        .foregroundColor(Color.white)
-                        .padding()
-                    Spacer()
-                }.background(Color.blue)
-                .cornerRadius(25)
-            })
-            .buttonStyle(PlainButtonStyle())
-            .padding()
-            .disabled(!store.canSubmit)
+            RoundedButton(title: "Submit", isEnabled: store.canSubmit, action: store.submit)
+                .padding()
         }
     }
 }
