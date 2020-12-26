@@ -32,7 +32,7 @@
 		189591E3258FDEF20072B9C2 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189591E2258FDEF20072B9C2 /* ScoreTest.swift */; };
 		189591E7258FDF560072B9C2 /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189591E6258FDF560072B9C2 /* BasicScore.swift */; };
 		189D077625963AB1000CD65C /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D077525963AB1000CD65C /* SingleAnswerQuestion.swift */; };
-		189D07792596402E000CD65C /* QuestionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D07782596402E000CD65C /* QuestionHeader.swift */; };
+		189D07792596402E000CD65C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D07782596402E000CD65C /* HeaderView.swift */; };
 		189D077C2596413F000CD65C /* SingleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D077B2596413F000CD65C /* SingleTextSelectionCell.swift */; };
 		189D0781259644E9000CD65C /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D0780259644E9000CD65C /* iOSSwiftUIViewControllerFactoryTest.swift */; };
 		189D078425964537000CD65C /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D078325964537000CD65C /* iOSSwiftUIViewControllerFactory.swift */; };
@@ -106,7 +106,7 @@
 		189591E6258FDF560072B9C2 /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
 		189D075F259636B8000CD65C /* QuizApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuizApp.entitlements; sourceTree = "<group>"; };
 		189D077525963AB1000CD65C /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
-		189D07782596402E000CD65C /* QuestionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeader.swift; sourceTree = "<group>"; };
+		189D07782596402E000CD65C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		189D077B2596413F000CD65C /* SingleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextSelectionCell.swift; sourceTree = "<group>"; };
 		189D0780259644E9000CD65C /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		189D078325964537000CD65C /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -367,6 +367,13 @@
 			path = QuizAppTests;
 			sourceTree = "<group>";
 		};
+		1894125E25976FB3005376B1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		189591E1258FDEE40072B9C2 /* Scoring */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,9 +403,10 @@
 		189D077425963A8C000CD65C /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1894125E25976FB3005376B1 /* Helpers */,
 				189D077525963AB1000CD65C /* SingleAnswerQuestion.swift */,
 				189D077B2596413F000CD65C /* SingleTextSelectionCell.swift */,
-				189D07782596402E000CD65C /* QuestionHeader.swift */,
+				189D07782596402E000CD65C /* HeaderView.swift */,
 				189D0790259667C5000CD65C /* MultipleSelectionStore.swift */,
 				189D079325966849000CD65C /* MultipleAnswerQuestion.swift */,
 				18FB5FFE2596694E00549025 /* MultipleTextSelectionCell.swift */,
@@ -568,7 +576,7 @@
 				188FAAC225843B0700A4867D /* CorrectAnswerCell.swift in Sources */,
 				18FB5FFF2596694E00549025 /* MultipleTextSelectionCell.swift in Sources */,
 				188FAAB825843A8500A4867D /* UITableViewExtension.swift in Sources */,
-				189D07792596402E000CD65C /* QuestionHeader.swift in Sources */,
+				189D07792596402E000CD65C /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
