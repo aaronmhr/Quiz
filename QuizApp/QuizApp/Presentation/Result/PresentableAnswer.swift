@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-struct PresentableAnswer {
+struct PresentableAnswer: Equatable {
     let question: String
     let answer: String
     let wrongAnswer: String?
