@@ -99,7 +99,11 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A4", "A5"])]
     }
 
-    func makeSingleAnswerQuestion(
+    private func makeSUT() -> iOSSwiftUIViewControllerFactory {
+        return iOSSwiftUIViewControllerFactory(options: options, correctAnswers: correctAnswers)
+    }
+
+    private func makeSingleAnswerQuestion(
         answerCallback: @escaping ([String]) ->Void = { _ in }
     ) -> SingleAnswerQuestion? {
         let sut = makeSUT()
