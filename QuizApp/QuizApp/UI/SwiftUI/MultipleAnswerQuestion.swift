@@ -8,33 +8,6 @@
 
 import SwiftUI
 
-struct RoundedButton: View {
-    let title: String
-    let isEnabled: Bool
-    let action: () -> Void
-
-    init(title: String, isEnabled: Bool = true, action: @escaping () -> Void) {
-        self.title = title
-        self.isEnabled = isEnabled
-        self.action = action
-    }
-
-    var body: some View {
-        Button(action: action, label: {
-            HStack {
-                Spacer()
-                Text(title)
-                    .foregroundColor(Color.white)
-                    .padding()
-                Spacer()
-            }.background(Color.blue)
-            .cornerRadius(25)
-        })
-        .buttonStyle(PlainButtonStyle())
-        .disabled(!isEnabled)
-    }
-}
-
 struct MultipleAnswerQuestion: View {
     let title: String
     let question: String
@@ -45,8 +18,10 @@ struct MultipleAnswerQuestion: View {
 
             HeaderView(title: title, subtitle: question)
 
-            ForEach(store.options.indices) { i in
-                MultipleTextSelectionCell(option: $store.options[i])
+            ForEach(store.options.indices) { i in            RoundedButton(title: "Some button", isEnabled: false, action: { })
+                .previewLayout(.sizeThatFits)
+            RoundedButton(title: "Some button", isEnabled: true, action: { })
+                .previewLayout(.sizeThatFits)(option: $store.options[i])
             }
 
             Spacer()

@@ -30,6 +30,7 @@
 		188FAAC225843B0700A4867D /* CorrectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FAAC125843B0600A4867D /* CorrectAnswerCell.swift */; };
 		188FAAC625843B2300A4867D /* WrongAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FAAC525843B2300A4867D /* WrongAnswerCell.swift */; };
 		18941261259770D3005376B1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D07782596402E000CD65C /* HeaderView.swift */; };
+		1894126425977184005376B1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1894126325977184005376B1 /* RoundedButton.swift */; };
 		189591E3258FDEF20072B9C2 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189591E2258FDEF20072B9C2 /* ScoreTest.swift */; };
 		189591E7258FDF560072B9C2 /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189591E6258FDF560072B9C2 /* BasicScore.swift */; };
 		189D077625963AB1000CD65C /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D077525963AB1000CD65C /* SingleAnswerQuestion.swift */; };
@@ -102,6 +103,7 @@
 		188FAABD25843ACE00A4867D /* PresentableAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAnswer.swift; sourceTree = "<group>"; };
 		188FAAC125843B0600A4867D /* CorrectAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerCell.swift; sourceTree = "<group>"; };
 		188FAAC525843B2300A4867D /* WrongAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerCell.swift; sourceTree = "<group>"; };
+		1894126325977184005376B1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		189591E2258FDEF20072B9C2 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		189591E6258FDF560072B9C2 /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
 		189D075F259636B8000CD65C /* QuizApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuizApp.entitlements; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				189D07782596402E000CD65C /* HeaderView.swift */,
+				1894126325977184005376B1 /* RoundedButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				189D079425966849000CD65C /* MultipleAnswerQuestion.swift in Sources */,
 				187549FA232ED00F0044F8BE /* AppDelegate.swift in Sources */,
 				189D0791259667C5000CD65C /* MultipleSelectionStore.swift in Sources */,
+				1894126425977184005376B1 /* RoundedButton.swift in Sources */,
 				18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */,
 				189591E7258FDF560072B9C2 /* BasicScore.swift in Sources */,
 				188FAAC625843B2300A4867D /* WrongAnswerCell.swift in Sources */,
