@@ -114,10 +114,6 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         return controller?.rootView
     }
 
-    private func makeSUT() -> iOSSwiftUIViewControllerFactory {
-        return iOSSwiftUIViewControllerFactory(options: options, correctAnswers: correctAnswers)
-    }
-
     private func makeMultipleAnswerQuestion(
         answerCallback: @escaping ([String]) -> Void = { _ in }
     ) -> MultipleAnswerQuestion? {
