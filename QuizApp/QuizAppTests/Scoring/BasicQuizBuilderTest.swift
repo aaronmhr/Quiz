@@ -73,7 +73,8 @@ class BasicQuizBuilderTest: XCTestCase {
         XCTAssertThrowsError(
             try BasicQuizBuilder(
                 singleAnswerQuestion: "q1",
-                options: NonEmptyOptions(head: "o1", tail: ["o1", "o3"]), answer: "o1")
+                options: NonEmptyOptions(head: "o1", tail: ["o1", "o3"]),
+                answer: "o1")
         ) { error in
             XCTAssertEqual(
                 error as? BasicQuizBuilder.AddingError,
@@ -86,7 +87,8 @@ class BasicQuizBuilderTest: XCTestCase {
         XCTAssertThrowsError(
             try BasicQuizBuilder(
                 singleAnswerQuestion: "q1",
-                options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]), answer: "o4")
+                options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
+                answer: "o4")
         ) { error in
             XCTAssertEqual(
                 error as? BasicQuizBuilder.AddingError,
