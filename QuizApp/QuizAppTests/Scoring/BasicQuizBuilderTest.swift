@@ -7,21 +7,28 @@
 //
 
 import XCTest
+import QuizEngine
 
 struct BasicQuiz {
-
+    let questions: [Question<String>]
 }
 
 struct BasicQuizBuilder {
-    func build() -> BasicQuiz? {
-        nil
+    private let questions: [Question<String>]
+
+    init(singleAnswerQuestion: String) {
+        questions = [.singleAnswer(singleAnswerQuestion)]
+    }
+
+    func build() -> BasicQuiz {
+        BasicQuiz(questions: questions)
     }
 }
 
 class BasicQuizBuilderTest: XCTestCase {
-    func test_empty() {
-        let sut = BasicQuizBuilder()
+    func test_initWithSingleAsnwerQuestion() {
+        let sut = BasicQuizBuilder(singleAnswerQuestion: "q1")
 
-        XCTAssertNil(sut.build())
+        XCTAssertEqual(sut.build().questions, [.singleAnswer("q1")])
     }
 }
