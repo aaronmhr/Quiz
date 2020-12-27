@@ -32,6 +32,7 @@ struct BasicQuizBuilder {
     enum AddingError: Error, Equatable {
         case duplicateOptions([String])
         case missingAnswerInOptions(answer: [String], options: [String])
+        case duplicateQuestion(Question<String>)
     }
 
     init(singleAnswerQuestion: String, options: NonEmptyOptions, answer: String) throws {
@@ -52,6 +53,12 @@ struct BasicQuizBuilder {
     }
 
     mutating func add(singleAnswerQuestion: String, options: NonEmptyOptions, answer: String) throws {
+        let question = Question.singleAnswer(singleAnswerQuestion)
+
+        guard !questions.contains(question) else {
+            throw AddingError.duplicateQuestion(question)
+        }
+
         let allOptions = options.all
 
         guard allOptions.contains(answer) else {
@@ -62,7 +69,6 @@ struct BasicQuizBuilder {
             throw AddingError.duplicateOptions(allOptions)
         }
 
-        let question = Question.singleAnswer(singleAnswerQuestion)
         self.questions += [question]
         self.options[question] = allOptions
         self.correctAnswers += [(question, [answer])]
@@ -179,7 +185,25 @@ class BasicQuizBuilderTest: XCTestCase {
         }
     }
 
+    func test_addSingleAnswerQuestion_duplicateQuestion_throw() throws {
+        var sut = try BasicQuizBuilder(
+            singleAnswerQuestion: "q1",
+            options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
+            answer: "o1")
 
+        XCTAssertThrowsError(
+            try sut.add(
+                singleAnswerQuestion: "q1",
+                options: NonEmptyOptions(head: "o3", tail: ["o4", "o5"]),
+                answer: "o5"
+            )
+        ) { error in
+            XCTAssertEqual(
+                error as? BasicQuizBuilder.AddingError,
+                BasicQuizBuilder.AddingError.duplicateQuestion(.singleAnswer("q1"))
+            )
+        }
+    }
     // MARK: - Helpers
     private func assertEqual(_ a1: [(Question<String>, [String])], _ a2: [(Question<String>, [String])], file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertTrue(a1.elementsEqual(a2, by: ==), "\(a1) is not equal to \(a2)", file: file, line: line)
