@@ -74,7 +74,7 @@ struct BasicQuizBuilder {
 }
 
 class BasicQuizBuilderTest: XCTestCase {
-    func test_initWithSingleAsnwerQuestion() throws {
+    func test_initWithSingleAnswerQuestion() throws {
         let sut = try BasicQuizBuilder(
             singleAnswerQuestion: "q1",
             options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
@@ -86,7 +86,7 @@ class BasicQuizBuilderTest: XCTestCase {
         assertEqual(result.correctAnswers, [(.singleAnswer("q1"), ["o1"])])
     }
 
-    func test_initWithSingleAsnwerQuestion_duplicateOptions_throw() throws {
+    func test_initWithSingleAnswerQuestion_duplicateOptions_throw() throws {
         XCTAssertThrowsError(
             try BasicQuizBuilder(
                 singleAnswerQuestion: "q1",
@@ -100,7 +100,7 @@ class BasicQuizBuilderTest: XCTestCase {
         }
     }
 
-    func test_initWithSingleAsnwerQuestion_missingAnswerInOptions_throw() throws {
+    func test_initWithSingleAnswerQuestion_missingAnswerInOptions_throw() throws {
         XCTAssertThrowsError(
             try BasicQuizBuilder(
                 singleAnswerQuestion: "q1",
@@ -114,7 +114,7 @@ class BasicQuizBuilderTest: XCTestCase {
         }
     }
 
-    func test_addSingleAnserQuestion() throws {
+    func test_addSingleAnswerQuestion() throws {
         var sut = try BasicQuizBuilder(
             singleAnswerQuestion: "q1",
             options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
@@ -139,7 +139,7 @@ class BasicQuizBuilderTest: XCTestCase {
         )
     }
 
-    func test_addSingleAsnwerQuestion_duplicateOptions_throw() throws {
+    func test_addSingleAnswerQuestion_duplicateOptions_throw() throws {
         var sut = try BasicQuizBuilder(
             singleAnswerQuestion: "q1",
             options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
@@ -159,7 +159,7 @@ class BasicQuizBuilderTest: XCTestCase {
         }
     }
 
-    func test_addSingleAsnwerQuestion_missingAnswerInOptions_throw() throws {
+    func test_addSingleAnswerQuestion_missingAnswerInOptions_throw() throws {
         var sut = try BasicQuizBuilder(
             singleAnswerQuestion: "q1",
             options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
@@ -178,6 +178,8 @@ class BasicQuizBuilderTest: XCTestCase {
             )
         }
     }
+
+
     // MARK: - Helpers
     private func assertEqual(_ a1: [(Question<String>, [String])], _ a2: [(Question<String>, [String])], file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertTrue(a1.elementsEqual(a2, by: ==), "\(a1) is not equal to \(a2)", file: file, line: line)
