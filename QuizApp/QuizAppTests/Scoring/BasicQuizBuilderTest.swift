@@ -176,18 +176,14 @@ class BasicQuizBuilderTest: XCTestCase {
             options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
             answer: "o1")
 
-        XCTAssertThrowsError(
+        assert(
             try sut.add(
                 singleAnswerQuestion: "q1",
                 options: NonEmptyOptions(head: "o3", tail: ["o4", "o5"]),
                 answer: "o5"
             )
-        ) { error in
-            XCTAssertEqual(
-                error as? BasicQuizBuilder.AddingError,
-                BasicQuizBuilder.AddingError.duplicateQuestion(.singleAnswer("q1"))
-            )
-        }
+            ,throws: .duplicateQuestion(.singleAnswer("q1"))
+        )
     }
     // MARK: - Helpers
     private func assertEqual(_ a1: [(Question<String>, [String])], _ a2: [(Question<String>, [String])], file: StaticString = #filePath, line: UInt = #line) {
