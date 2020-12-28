@@ -65,6 +65,14 @@
                BlueprintName = "QuizAppTests"
                ReferencedContainer = "container:QuizApp.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "MultipleAnswersQuestionSnapshotTest/test()">
+               </Test>
+               <Test
+                  Identifier = "MultipleAnswersQuestionSnapshotTest/test_snapshotMultipleAnswerView()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

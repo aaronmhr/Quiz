@@ -1,5 +1,5 @@
 //
-//  iOSViewControllerFactory.swift
+//  iOSUIKitViewControllerFactory.swift
 //  QuizApp
 //
 //  Created by Aaron Huánuco on 14/12/20.
@@ -9,19 +9,19 @@
 import UIKit
 import QuizEngine
 
-final class iOSViewControllerFactory: ViewControllerFactory {
+final class iOSUIKitViewControllerFactory: ViewControllerFactory {
     typealias Answers = [(question: Question<String>, answer: [String])]
 
     private let options: [Question<String>: [String]]
     private let correctAnswers: Answers
 
+    private var questions: [Question<String>] {
+        return correctAnswers.map { $0.question }
+    }
+
     init(options: [Question<String>: [String]], correctAnswers: Answers) {
         self.options = options
         self.correctAnswers = correctAnswers
-    }
-
-    var questions: [Question<String>] {
-        correctAnswers.map(\.question)
     }
 
     func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
@@ -54,7 +54,8 @@ final class iOSViewControllerFactory: ViewControllerFactory {
         let presenter = ResultsPresenter(
             userAnswers: userAnswers,
             correctAnswers: correctAnswers,
-            scorer: BasicScore.score)
+            scorer: BasicScore.score
+        )
         let controller = ResultsViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
         controller.title = presenter.title
         return controller
