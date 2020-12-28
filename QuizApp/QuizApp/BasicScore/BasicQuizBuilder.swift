@@ -67,8 +67,14 @@ public struct BasicQuizBuilder {
 extension BasicQuizBuilder {
     public init(multipleAnswerQuestion: String, options: NonEmptyOptions, answer: NonEmptyOptions) throws {
         let question = Question.multipleAnswer(multipleAnswerQuestion)
+        let allOptions = options.all
+
+        guard Set(allOptions).count == allOptions.count else {
+            throw AddingError.duplicateOptions(allOptions)
+        }
+
         self.questions = [question]
-        self.options[question] = options.all
+        self.options[question] = allOptions
         self.correctAnswers = [(question, answer.all)]
     }
 }
