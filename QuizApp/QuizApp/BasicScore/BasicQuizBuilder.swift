@@ -63,3 +63,12 @@ public struct BasicQuizBuilder {
         BasicQuiz(questions: questions, options: options, correctAnswers: correctAnswers)
     }
 }
+
+extension BasicQuizBuilder {
+    public init(multipleAnswerQuestion: String, options: NonEmptyOptions, answer: NonEmptyOptions) throws {
+        let question = Question.multipleAnswer(multipleAnswerQuestion)
+        self.questions = [question]
+        self.options[question] = options.all
+        self.correctAnswers = [(question, answer.all)]
+    }
+}
