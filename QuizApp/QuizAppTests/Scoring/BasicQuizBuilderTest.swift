@@ -211,6 +211,26 @@ class BasicQuizBuilderTest: XCTestCase {
         )
     }
 
+    func test_initWithMultipleAnswerQuestion_missingAnswerInOptions_throw() throws {
+        assert(
+            try BasicQuizBuilder(
+                multipleAnswerQuestion: "q1",
+                options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
+                answer: NonEmptyOptions(head: "o4", tail: [])
+            ),
+            throws: .missingAnswerInOptions(answer: ["o4"], options: ["o1", "o2", "o3"])
+        )
+
+        assert(
+            try BasicQuizBuilder(
+                multipleAnswerQuestion: "q1",
+                options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
+                answer: NonEmptyOptions(head: "o2", tail: ["o4"])
+            ),
+            throws: .missingAnswerInOptions(answer: ["o2", "o4"], options: ["o1", "o2", "o3"])
+        )
+    }
+
     // MARK: - Helpers
     private func assertEqual(_ a1: [(Question<String>, [String])], _ a2: [(Question<String>, [String])], file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertTrue(a1.elementsEqual(a2, by: ==), "\(a1) is not equal to \(a2)", file: file, line: line)

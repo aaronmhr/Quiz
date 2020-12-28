@@ -68,13 +68,18 @@ extension BasicQuizBuilder {
     public init(multipleAnswerQuestion: String, options: NonEmptyOptions, answer: NonEmptyOptions) throws {
         let question = Question.multipleAnswer(multipleAnswerQuestion)
         let allOptions = options.all
+        let allAnswers = answer.all
 
         guard Set(allOptions).count == allOptions.count else {
             throw AddingError.duplicateOptions(allOptions)
         }
 
+        guard Set(allAnswers).isSubset(of: Set(allOptions)) else {
+            throw AddingError.missingAnswerInOptions(answer: allAnswers, options: allOptions)
+        }
+
         self.questions = [question]
         self.options[question] = allOptions
-        self.correctAnswers = [(question, answer.all)]
+        self.correctAnswers = [(question, allAnswers)]
     }
 }
