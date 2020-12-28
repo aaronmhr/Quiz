@@ -235,7 +235,8 @@ class BasicQuizBuilderTest: XCTestCase {
         var sut = try BasicQuizBuilder(
             multipleAnswerQuestion: "q1",
             options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
-            answers: NonEmptyOptions(head: "o1", tail: []))
+            answers: NonEmptyOptions(head: "o1", tail: [])
+        )
 
         try sut.add(
             multipleAnswerQuestion: "q2",
@@ -253,6 +254,23 @@ class BasicQuizBuilderTest: XCTestCase {
         assertEqual(result.correctAnswers, [
                         (.multipleAnswer("q1"), ["o1"]),
                         (.multipleAnswer("q2"), ["o3", "o4"])]
+        )
+    }
+
+    func test_multipleAnswerQuestion_duplicateQuestion_throw() throws {
+        var sut = try BasicQuizBuilder(
+            multipleAnswerQuestion: "q1",
+            options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
+            answers: NonEmptyOptions(head: "o1", tail: [])
+        )
+
+        assert(
+            try sut.add(
+                multipleAnswerQuestion: "q1",
+                options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
+                answers: NonEmptyOptions(head: "o1", tail: [])
+            )
+            ,throws: .duplicateQuestion(.multipleAnswer("q1"))
         )
     }
 
