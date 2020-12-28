@@ -10,15 +10,6 @@ import XCTest
 import QuizEngine
 @testable import QuizApp
 
-struct NonEmptyOptions {
-    let head: String
-    let tail: [String]
-
-    var all: [String] {
-        [head] + tail
-    }
-}
-
 struct BasicQuizBuilder {
     private var questions: [Question<String>] = []
     private var options: [Question<String>: [String]] = [:]
