@@ -8,12 +8,7 @@
 
 import XCTest
 import QuizEngine
-
-struct BasicQuiz {
-    let questions: [Question<String>]
-    let options: [Question<String>: [String]]
-    let correctAnswers: [(Question<String>, [String])]
-}
+@testable import QuizApp
 
 struct NonEmptyOptions {
     let head: String

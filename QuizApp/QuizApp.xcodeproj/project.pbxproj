@@ -51,6 +51,7 @@
 		18C349562585844600FC2A9F /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */; };
 		18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */; };
 		18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */; };
+		18D81EC225996E8000B38980 /* BasicQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D81EBB25996E1A00B38980 /* BasicQuiz.swift */; };
 		18FB5FFF2596694E00549025 /* MultipleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB5FFE2596694E00549025 /* MultipleTextSelectionCell.swift */; };
 		18FB60022596921200549025 /* MultipleAnswersQuestionSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB60012596921200549025 /* MultipleAnswersQuestionSnapshotTest.swift */; };
 		18FB6006259692FD00549025 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB6005259692FD00549025 /* UIImage+TestHelpers.swift */; };
@@ -131,6 +132,7 @@
 		18C349552585844600FC2A9F /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		18D81EBB25996E1A00B38980 /* BasicQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicQuiz.swift; sourceTree = "<group>"; };
 		18FB5FFE2596694E00549025 /* MultipleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTextSelectionCell.swift; sourceTree = "<group>"; };
 		18FB60012596921200549025 /* MultipleAnswersQuestionSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswersQuestionSnapshotTest.swift; sourceTree = "<group>"; };
 		18FB6005259692FD00549025 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				189591E6258FDF560072B9C2 /* BasicScore.swift */,
+				18D81EBB25996E1A00B38980 /* BasicQuiz.swift */,
 			);
 			path = BasicScore;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				18754A1C232ED8800044F8BE /* QuestionViewController.swift in Sources */,
 				189D079425966849000CD65C /* MultipleAnswerQuestion.swift in Sources */,
 				187549FA232ED00F0044F8BE /* AppDelegate.swift in Sources */,
+				18D81EC225996E8000B38980 /* BasicQuiz.swift in Sources */,
 				189D0791259667C5000CD65C /* MultipleSelectionStore.swift in Sources */,
 				1894126425977184005376B1 /* RoundedButton.swift in Sources */,
 				18C3495C2585A5ED00FC2A9F /* ViewControllerFactory.swift in Sources */,
