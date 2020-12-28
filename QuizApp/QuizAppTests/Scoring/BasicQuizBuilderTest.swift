@@ -193,7 +193,7 @@ class BasicQuizBuilderTest: XCTestCase {
         let sut = try BasicQuizBuilder(
             multipleAnswerQuestion: "q1",
             options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
-            answer: NonEmptyOptions(head: "o1", tail: ["o2"]))
+            answers: NonEmptyOptions(head: "o1", tail: ["o2"]))
 
         let result = sut.build()
         XCTAssertEqual(result.questions, [.multipleAnswer("q1")])
@@ -206,7 +206,7 @@ class BasicQuizBuilderTest: XCTestCase {
             try BasicQuizBuilder(
                 multipleAnswerQuestion: "q1",
                 options: NonEmptyOptions(head: "o1", tail: ["o1", "o2"]),
-                answer: NonEmptyOptions(head: "o1", tail: ["o2"])),
+                answers: NonEmptyOptions(head: "o1", tail: ["o2"])),
             throws:.duplicateOptions(["o1", "o1", "o2"])
         )
     }
@@ -216,7 +216,7 @@ class BasicQuizBuilderTest: XCTestCase {
             try BasicQuizBuilder(
                 multipleAnswerQuestion: "q1",
                 options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
-                answer: NonEmptyOptions(head: "o4", tail: [])
+                answers: NonEmptyOptions(head: "o4", tail: [])
             ),
             throws: .missingAnswerInOptions(answer: ["o4"], options: ["o1", "o2", "o3"])
         )
@@ -225,9 +225,34 @@ class BasicQuizBuilderTest: XCTestCase {
             try BasicQuizBuilder(
                 multipleAnswerQuestion: "q1",
                 options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
-                answer: NonEmptyOptions(head: "o2", tail: ["o4"])
+                answers: NonEmptyOptions(head: "o2", tail: ["o4"])
             ),
             throws: .missingAnswerInOptions(answer: ["o2", "o4"], options: ["o1", "o2", "o3"])
+        )
+    }
+
+    func test_addMultipleAnswerQuestion() throws {
+        var sut = try BasicQuizBuilder(
+            multipleAnswerQuestion: "q1",
+            options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
+            answers: NonEmptyOptions(head: "o1", tail: []))
+
+        try sut.add(
+            multipleAnswerQuestion: "q2",
+            options: NonEmptyOptions(head: "o3", tail: ["o4", "o5"]),
+            answers: NonEmptyOptions(head: "o3", tail: ["o4"])
+        )
+
+        let result = sut.build()
+
+        XCTAssertEqual(result.questions, [.multipleAnswer("q1"), .multipleAnswer("q2")])
+        XCTAssertEqual(result.options, [
+                        .multipleAnswer("q1"): ["o1", "o2", "o3"],
+                        .multipleAnswer("q2"): ["o3", "o4", "o5"]]
+        )
+        assertEqual(result.correctAnswers, [
+                        (.multipleAnswer("q1"), ["o1"]),
+                        (.multipleAnswer("q2"), ["o3", "o4"])]
         )
     }
 

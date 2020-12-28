@@ -65,10 +65,14 @@ public struct BasicQuizBuilder {
 }
 
 extension BasicQuizBuilder {
-    public init(multipleAnswerQuestion: String, options: NonEmptyOptions, answer: NonEmptyOptions) throws {
+    public init(multipleAnswerQuestion: String, options: NonEmptyOptions, answers: NonEmptyOptions) throws {
+        try add(multipleAnswerQuestion: multipleAnswerQuestion, options: options, answers: answers)
+    }
+
+    public mutating func add(multipleAnswerQuestion: String, options: NonEmptyOptions, answers: NonEmptyOptions) throws {
         let question = Question.multipleAnswer(multipleAnswerQuestion)
         let allOptions = options.all
-        let allAnswers = answer.all
+        let allAnswers = answers.all
 
         guard Set(allOptions).count == allOptions.count else {
             throw AddingError.duplicateOptions(allOptions)
@@ -78,8 +82,13 @@ extension BasicQuizBuilder {
             throw AddingError.missingAnswerInOptions(answer: allAnswers, options: allOptions)
         }
 
-        self.questions = [question]
-        self.options[question] = allOptions
-        self.correctAnswers = [(question, allAnswers)]
+        var newOptions = self.options
+        newOptions[question] = allOptions
+
+        self = BasicQuizBuilder(
+            questions: questions + [question],
+            options: newOptions,
+            correctAnswers: correctAnswers + [(question, allAnswers)]
+        )
     }
 }
