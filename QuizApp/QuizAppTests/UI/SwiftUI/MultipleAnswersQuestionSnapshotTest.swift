@@ -10,7 +10,7 @@ import XCTest
 @testable import QuizApp
 
 class MultipleAnswersQuestionSnapshotTest: XCTestCase {
-    func test() {
+    func test_snapshotMultipleAnswerView() {
         let sut = MultipleAnswerQuestion(
             title: "A title",
             question: "A question",
