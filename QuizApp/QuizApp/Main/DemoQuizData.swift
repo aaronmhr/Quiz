@@ -11,17 +11,17 @@ import QuizEngine
 let demoQuiz = try!
     BasicQuizBuilder(
         singleAnswerQuestion: "What's Mike's nationality?",
-        options: .init(head: "Canadian", tail: ["American", "Greek"]),
+        options: .init("Canadian", "American", "Greek"),
         answer: "Greek"
     )
     .adding(
         multipleAnswerQuestion: "What are Caio's nationalities?",
-        options: .init(head: "Portuguese", tail: ["American", "Brazilian"]),
-        answer: .init(head: "Portuguese", tail: ["Brazilian"])
+        options: .init("Portuguese", "American", "Brazilian"),
+        answer: .init("Portuguese", "Brazilian")
     )
     .adding(
         singleAnswerQuestion: "What's the capital of Brazil?",
-        options: .init(head: "Sao Paulo", tail: ["Rio de Janeiro", "Brasilia"]),
+        options: .init("Sao Paulo", "Rio de Janeiro", "Brasilia"),
         answer: "Brasilia"
     )
     .build()

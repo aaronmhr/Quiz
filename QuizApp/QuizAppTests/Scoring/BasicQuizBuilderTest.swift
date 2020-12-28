@@ -198,6 +198,6 @@ class BasicQuizBuilderTest: XCTestCase {
 
 extension NonEmptyOptions: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: String...) {
-        self.init(head: elements[0], tail: Array(elements.dropFirst()))
+        self.init(elements[0], Array(elements.dropFirst()))
     }
 }

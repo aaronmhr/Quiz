@@ -7,10 +7,15 @@
 //
 
 public struct NonEmptyOptions {
-    public let head: String
-    public let tail: [String]
+    private let head: String
+    private let tail: [String]
 
-    public init(head: String, tail: [String]) {
+    public init(_ head: String, _ tail: String...) {
+        self.head = head
+        self.tail = tail
+    }
+
+    public init(_ head: String, _ tail: [String]) {
         self.head = head
         self.tail = tail
     }
