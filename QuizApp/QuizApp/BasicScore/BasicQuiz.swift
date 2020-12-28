@@ -12,10 +12,4 @@ public struct BasicQuiz {
     public let questions: [Question<String>]
     public let options: [Question<String>: [String]]
     public let correctAnswers: [(Question<String>, [String])]
-
-    init(questions: [Question<String>], options: [Question<String> : [String]], correctAnswers: [(Question<String>, [String])]) {
-        self.questions = questions
-        self.options = options
-        self.correctAnswers = correctAnswers
-    }
 }

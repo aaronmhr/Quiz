@@ -53,6 +53,7 @@
 		18C349652585A63600FC2A9F /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C349582585A5B300FC2A9F /* NavigationControllerRouter.swift */; };
 		18D81EC225996E8000B38980 /* BasicQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D81EBB25996E1A00B38980 /* BasicQuiz.swift */; };
 		18D81EC525996EED00B38980 /* NonEmptyOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D81EC425996EED00B38980 /* NonEmptyOptions.swift */; };
+		18D81EC825996F2700B38980 /* BasicQuizBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D81EC725996F2700B38980 /* BasicQuizBuilder.swift */; };
 		18FB5FFF2596694E00549025 /* MultipleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB5FFE2596694E00549025 /* MultipleTextSelectionCell.swift */; };
 		18FB60022596921200549025 /* MultipleAnswersQuestionSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB60012596921200549025 /* MultipleAnswersQuestionSnapshotTest.swift */; };
 		18FB6006259692FD00549025 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB6005259692FD00549025 /* UIImage+TestHelpers.swift */; };
@@ -135,6 +136,7 @@
 		18C3495B2585A5ED00FC2A9F /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		18D81EBB25996E1A00B38980 /* BasicQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicQuiz.swift; sourceTree = "<group>"; };
 		18D81EC425996EED00B38980 /* NonEmptyOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonEmptyOptions.swift; sourceTree = "<group>"; };
+		18D81EC725996F2700B38980 /* BasicQuizBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicQuizBuilder.swift; sourceTree = "<group>"; };
 		18FB5FFE2596694E00549025 /* MultipleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTextSelectionCell.swift; sourceTree = "<group>"; };
 		18FB60012596921200549025 /* MultipleAnswersQuestionSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswersQuestionSnapshotTest.swift; sourceTree = "<group>"; };
 		18FB6005259692FD00549025 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				189591E6258FDF560072B9C2 /* BasicScore.swift */,
 				18D81EBB25996E1A00B38980 /* BasicQuiz.swift */,
 				18D81EC425996EED00B38980 /* NonEmptyOptions.swift */,
+				18D81EC725996F2700B38980 /* BasicQuizBuilder.swift */,
 			);
 			path = BasicScore;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				1894127225979628005376B1 /* ResultAnswerCell.swift in Sources */,
 				188FAAB825843A8500A4867D /* UITableViewExtension.swift in Sources */,
 				189412862597FB42005376B1 /* QuizNavigationView.swift in Sources */,
+				18D81EC825996F2700B38980 /* BasicQuizBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

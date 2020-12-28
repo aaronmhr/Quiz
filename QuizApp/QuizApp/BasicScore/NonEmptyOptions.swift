@@ -6,11 +6,16 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-struct NonEmptyOptions {
-    let head: String
-    let tail: [String]
+public struct NonEmptyOptions {
+    public let head: String
+    public let tail: [String]
 
-    var all: [String] {
+    public init(head: String, tail: [String]) {
+        self.head = head
+        self.tail = tail
+    }
+
+    public var all: [String] {
         [head] + tail
     }
 }

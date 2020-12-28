@@ -8,63 +8,7 @@
 
 import XCTest
 import QuizEngine
-@testable import QuizApp
-
-struct BasicQuizBuilder {
-    private var questions: [Question<String>] = []
-    private var options: [Question<String>: [String]] = [:]
-    private var correctAnswers: [(Question<String>, [String])] = []
-
-    enum AddingError: Error, Equatable {
-        case duplicateOptions([String])
-        case missingAnswerInOptions(answer: [String], options: [String])
-        case duplicateQuestion(Question<String>)
-    }
-
-    init(singleAnswerQuestion: String, options: NonEmptyOptions, answer: String) throws {
-        try add(singleAnswerQuestion: singleAnswerQuestion, options: options, answer: answer)
-    }
-
-    private init(questions: [Question<String>], options: [Question<String> : [String]], correctAnswers: [(Question<String>, [String])]) {
-        self.questions = questions
-        self.options = options
-        self.correctAnswers = correctAnswers
-    }
-
-    mutating func add(singleAnswerQuestion: String, options: NonEmptyOptions, answer: String) throws {
-        self = try adding(singleAnswerQuestion: singleAnswerQuestion, options: options, answer: answer)
-    }
-
-    func adding(singleAnswerQuestion: String, options: NonEmptyOptions, answer: String) throws -> BasicQuizBuilder {
-        let question = Question.singleAnswer(singleAnswerQuestion)
-
-        guard !questions.contains(question) else {
-            throw AddingError.duplicateQuestion(question)
-        }
-
-        let allOptions = options.all
-
-        guard allOptions.contains(answer) else {
-            throw AddingError.missingAnswerInOptions(answer: [answer], options: allOptions)
-        }
-
-        guard Set(allOptions).count == allOptions.count else {
-            throw AddingError.duplicateOptions(allOptions)
-        }
-
-        var newOptions = self.options
-        newOptions[question] = allOptions
-
-        return BasicQuizBuilder(
-            questions: questions + [question],
-            options: newOptions,
-            correctAnswers: correctAnswers + [(question, [answer])])
-    }
-
-    func build() -> BasicQuiz {
-        BasicQuiz(questions: questions, options: options, correctAnswers: correctAnswers)
-    }
-}
+import QuizApp
 
 class BasicQuizBuilderTest: XCTestCase {
     func test_initWithSingleAnswerQuestion() throws {
