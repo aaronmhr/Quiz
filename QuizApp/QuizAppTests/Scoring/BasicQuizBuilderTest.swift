@@ -373,6 +373,30 @@ class BasicQuizBuilderTest: XCTestCase {
         )
     }
 
+    func test_addingSingleAnswerQuestion_toMultipleAnswerContainingBuilder() throws {
+        let sut = try BasicQuizBuilder(
+            multipleAnswerQuestion: "q2",
+            options: NonEmptyOptions(head: "o3", tail: ["o4", "o5"]),
+            answers: NonEmptyOptions(head: "o3", tail: ["o4"])
+        ).adding(
+            singleAnswerQuestion: "q1",
+            options: NonEmptyOptions(head: "o1", tail: ["o2", "o3"]),
+            answer: "o1"
+        )
+
+        let result = sut.build()
+
+        XCTAssertEqual(result.questions, [.multipleAnswer("q2"), .singleAnswer("q1")])
+        XCTAssertEqual(result.options, [
+            .multipleAnswer("q2"): ["o3", "o4", "o5"],
+            .singleAnswer("q1"): ["o1", "o2", "o3"],
+        ])
+        assertEqual(result.correctAnswers, [
+            (.multipleAnswer("q2"), ["o3", "o4"]),
+            (.singleAnswer("q1"), ["o1"]),
+        ])
+    }
+
     // MARK: - Helpers
     private func assertEqual(_ a1: [(Question<String>, [String])], _ a2: [(Question<String>, [String])], file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertTrue(a1.elementsEqual(a2, by: ==), "\(a1) is not equal to \(a2)", file: file, line: line)
