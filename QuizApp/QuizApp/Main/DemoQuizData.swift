@@ -17,7 +17,7 @@ let demoQuiz = try!
     .adding(
         multipleAnswerQuestion: "What are Caio's nationalities?",
         options: .init(head: "Portuguese", tail: ["American", "Brazilian"]),
-        answers: .init(head: "Portuguese", tail: ["Brazilian"])
+        answer: .init(head: "Portuguese", tail: ["Brazilian"])
     )
     .adding(
         singleAnswerQuestion: "What's the capital of Brazil?",
