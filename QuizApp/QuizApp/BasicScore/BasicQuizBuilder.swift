@@ -70,27 +70,31 @@ extension BasicQuizBuilder {
     }
     
     public mutating func add(multipleAnswerQuestion: String, options: NonEmptyOptions, answers: NonEmptyOptions) throws {
+        self = try adding(multipleAnswerQuestion: multipleAnswerQuestion, options: options, answers: answers)
+    }
+
+    public func adding(multipleAnswerQuestion: String, options: NonEmptyOptions, answers: NonEmptyOptions) throws -> BasicQuizBuilder {
         let question = Question.multipleAnswer(multipleAnswerQuestion)
-        
+
         guard !questions.contains(question) else {
             throw AddingError.duplicateQuestion(question)
         }
-        
+
         let allOptions = options.all
         let allAnswers = answers.all
-        
+
         guard Set(allOptions).count == allOptions.count else {
             throw AddingError.duplicateOptions(allOptions)
         }
-        
+
         guard Set(allAnswers).isSubset(of: Set(allOptions)) else {
             throw AddingError.missingAnswerInOptions(answer: allAnswers, options: allOptions)
         }
-        
+
         var newOptions = self.options
         newOptions[question] = allOptions
-        
-        self = BasicQuizBuilder(
+
+        return BasicQuizBuilder(
             questions: questions + [question],
             options: newOptions,
             correctAnswers: correctAnswers + [(question, allAnswers)]
