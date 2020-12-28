@@ -28,10 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func startNewQuiz() {
         let factory = iOSUIKitViewControllerFactory(
-            options: options,
-            correctAnswers: correctAnswers)
+            options: demoQuiz.options,
+            correctAnswers: demoQuiz.correctAnswers)
         let router = NavigationControllerRouter(navigationController, factory: factory)
 
-        quiz = Quiz.start(questions: questions, delegate: router)
+        quiz = Quiz.start(questions: demoQuiz.questions, delegate: router)
     }
 }
